@@ -48,7 +48,6 @@ a, a:hover, a:active {
     clear: both;
 }
 
-
 /* Styles
 ---------------------------------*/
 body {
@@ -213,7 +212,7 @@ p {
 .top_cont_outer {
     background: #b02951;
     position: relative;
-	background:url(../img/slide-1.jpg) top center no-repeat;
+	background:url(../img/wallpaper2.jpg) top center no-repeat;
 	height:650px;
 }
 
@@ -248,7 +247,7 @@ p {
 
 .top_left_cont h2 {
     font-size: 40px;
-    color: #1f2a58;
+    color: #fff;
     line-height: 52px;
     margin: 0 0 26px 0;
     font-family: 'Raleway', sans-serif;
