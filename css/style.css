@@ -842,6 +842,14 @@ margin-bottom: 5px;
     color: #1f2a58;
 }
 
+.team_box ul li a.fa-github:hover {
+    color: #1f2a58;
+}
+
+.team_box ul li a.fa-graduation-cap:hover {
+    color: #1f2a58;
+}
+
 .team_box ul li a.fa-envelope:hover {
     color: #1f2a58;
 }
