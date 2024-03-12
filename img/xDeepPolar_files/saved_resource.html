@@ -1,0 +1,4700 @@
+<!DOCTYPE html>
+<!-- saved from url=(0171)https://conr8019jf97.share.zrok.io/services/static/9.14/toolbox/compiler/mdwas/client/session/webAppContainer.html?MDWAS-Connection-Id=00152300-5b38-4060-975c-6ea8fca70d24 -->
+<html class="clientmdwasContainer dj_webkit dj_chrome dj_contentbox has-webkit has-no-quirks"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title id="appTitle">MATLAB Web Apps</title>
+    <!-- CSS: implied media="all" -->
+    <link rel="stylesheet" href="./common-css(1).css">
+<style>/* Add opacity for enable = off to match other components*/
+.rtePaneFixedSize.vc-disabled {
+    opacity: 0.35;
+}
+.vc-widget {
+    overflow: hidden;
+}</style><style>.vepopoutwidgetbase {
+    height: 100%;
+}
+
+.vepopupoutterdiv {
+    height: 100%;
+}
+
+.vepopupoutterdiv .goupbuttondiv {
+    width: 100%;
+    height: 24px;
+}
+
+.vepopupoutterdiv .goupbuttondiv.goupbuttonhidden {
+    visibility:hidden;
+    height: 0px;
+}
+
+.vepopupoutterdiv .goupbuttondiv .mwPushButton {
+    float: right;
+    padding-bottom: 1px;
+}
+
+.vepopupoutterdiv .goupbuttondiv.goupbuttonhidden .mwPushButton {
+    float: none;
+}
+
+.vepopupoutterdiv .vepopupinnerdiv {
+    height: calc(100% - 24px);
+}
+
+.vepopupoutterdiv .goupbuttondiv.goupbuttonhidden + .vepopupinnerdiv {
+    height: 100%;
+}
+</style><style>.dataTypeMenu.mwWidget.mwDefaultVisualFamily {
+    /* match default width of mw-table columns */
+    min-width: 81px;
+}
+
+/*
+ * More Options Item - grey and center
+ */
+.dataTypeMenu .moreOptionsItem,
+.dataTypeMenu .moreOptionsItem * {
+    color: grey;
+    text-align: center;
+}
+
+
+/*
+ * Custom Option Input - flush with menu
+ */
+.dataTypeMenu.mwWidget .customOptionInput.mwTextFieldMenuItem {
+    padding: 0;
+}
+.dataTypeMenu .customOptionInput.mwTextFieldMenuItem .mwTextField {
+    /* Must override style set by TextFieldMenuItem (width: 150px; height: 22px), which doesn't 
+       allow for setting width/height programmatically, to achieve flush textfield */
+    width: 100% !important;
+    height: auto !important;
+
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+.dataTypeMenu .customOptionInput.mwTextFieldMenuItem .mwInputNode {
+    padding: 5px 8px;
+}</style><style>
+</style><style>/*This component must include all the dependencies for other downstream components*/</style><style>.ClientDocument div.summaryBar {
+    padding-left: 9px;
+    height: 18px;
+	white-space:normal;
+}
+
+.ClientDocument div.summaryBar .headerElement {
+    font-family: 'Consolas', sans-serif;
+    font-style: normal;
+}
+
+.ClientDocument div.summaryBarVarName {
+    display: inline;
+}
+
+.ClientDocument div.summaryBar.hide {
+    display: none;
+}
+
+.ClientDocument .summaryBar .headerElement,
+.ClientDocument .summaryBar .summaryBarSize,
+.ClientDocument .summaryBar .summaryBarType,
+.ClientDocument .summaryBar .summaryBarStatus{
+    display: inline-block;
+    padding: 0px;
+}
+
+.ClientDocument .summaryBar .headerElement{
+    margin-left: 5px;
+}
+
+/*Without this, the summarybar will not be responsive when minimized*/
+.ClientDocument div.summaryBar .summaryBarContainer{
+	display: inline;
+    float: left;
+}
+
+.ClientDocument div.summaryBar .filterSummaryData.show{
+    font-family: 'Consolas', sans-serif;
+    font-style: normal;
+    display: inline-block;
+}
+
+.ClientDocument div.summaryBar .filterSummaryData.hide{
+    display: none;
+}
+
+/* Overrides so as to not conflict with MOL css
+ TODO: refactor this once both the codebases merge*/
+.ClientDocument .summaryBarContainer{
+    padding-bottom: 0px;
+}
+
+.ClientDocument .summaryBar .summaryBarSize,
+.ClientDocument .summaryBar .summaryBarType,
+.ClientDocument .summaryBar .summaryBarStatus{
+    float: none;
+    overflow: visible;
+    height: auto;
+}
+
+/* SummaryBar text uses the default style provided by style.css for color,
+adding this override since style.css is not supporting theming. Remove it once it does */
+.ClientDocument .summaryBar{
+    color: var(--mw-color-primary);
+}
+
+div.summaryBar .summaryBarIcon.hide{
+    display: none;
+}
+
+div.summaryBar .summaryBarIcon {
+    float: left;
+    display: inline-block;
+}
+
+.ClientDocument .summaryBar .summaryBarStatus.interactive {
+    text-decoration: underline;
+    text-underline-offset: 1px;
+    text-decoration-color: var(--mw-color-hyperlink, var(--mw-color-blue, #1656A7));
+}
+
+.ndSliceSelector.summaryBarIcon {
+    display: inline;
+    float: left;
+    vertical-align: top;
+    font-size: 13px;
+}
+
+.ndSliceSelector.summaryBarSize,
+.ndSliceSelector.summaryBarType {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 13px;
+    padding-left: 5px;
+}
+
+input.ndSliceInput,
+label.ndSliceMaxDimension {
+    width: 50px;
+    color: var(--mw-color-primary, var(--mw-color-gray900, #212121));
+}
+
+input.ndSliceInput.error {
+    border-color: var(--mw-borderColor-error, var(--mw-color-red600, #B7312C));
+}
+
+label.ndSliceMaxDimension {
+    display: block;
+    text-align: center;
+    font-size: 13px;
+}
+
+.ndSliceSelector.outerDimensions {
+    padding-top: 10px;
+}
+
+.ndSliceSelector.innerDimensions {
+    display: inline-block;
+}
+
+.ndSliceSelector.ndSliceHelpText {
+    padding-top: 10px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.ndSliceSelector.ndSliceHelpText.error {
+    color: var(--mw-color-error, var(--mw-color-red600, #B7312C));
+}</style><style>.ClientDocument .ClientViewDiv td.mw-table-cell {
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.mw-table-bottom-left-affordance {
+    height: 11px;
+}
+
+.ClientDocument.double .ClientViewDiv td.mw-table-cell {
+    font-family: 'Consolas', sans-serif;
+}
+
+/*Column header Alignment*/
+.ClientDocument .ClientViewDiv .mw-table-header-label {
+    text-align: center;
+}
+
+div.ClientDocument .ClientViewDiv {
+    height: 100%;
+}
+
+div.ClientDocument.DataFitToViewport .ClientViewDiv {
+    height: auto;
+}
+
+/*TO DO : this should be moved to mw-table code */
+.mw-table-top-right-affordance {
+    z-index: 0;
+}
+
+/* Add mono-spaced fonts for Unsupported View to match display output
+   NOTE: This will be removed when we use semantic variables and support font preferences*/
+.ClientDocument .ClientViewDiv .UnknownViewerTextArea textarea {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-size: 12px;
+}
+
+.loading {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(release/images/spinner-ba87fdc9341c7b89efe3559a9689ee37.gif) no-repeat center;
+    visibility: hidden;
+    opacity: 0;
+    transition-delay: 0s;
+    transition: visibility 0s linear 0.25s, opacity 0.25s linear;
+}
+
+.mwTable .mw-scrolling-div {
+    overflow: auto;
+}
+
+div.ClientDocument .mw-table-bottom-left-affordance {
+    height: 11px;
+}
+
+/******* Row header min-width changes ********/
+
+/* For Time column of time tables that have header indices need to account space for index to avoid mismatched column headers */
+.ClientDocument .timetable th[data-col-index="0"] .mw-table-header-index-font {
+    height: 15px;
+}
+
+/* Using this to set background color instead of using meta-data engine as this has no lag-time in fetching
+   column metadata styles from server*/
+.ClientDocument .timetable td[data-col="0"].mw-table-cell {
+    --timetabletime-bg-color: var(--mw-backgroundColor-primary);
+    --timetabletime-selection-bg-color: transparent;
+}
+
+.ClientDocument .timetable td[data-col="0"].mw-table-cell {
+    background-color: var(--timetabletime-bg-color);
+}
+
+.ClientDocument .timetable td.mw-table-cell-selected[data-col="0"].mw-table-cell {
+    background-color: var(--timetabletime-selection-bg-color);
+}
+
+div.ClientDocument .ClientViewDiv.hasSummaryBar {
+    height: calc(100% - 18px);
+}
+
+/*** CSS for new numeric visual design ***/
+.ClientDocument.numeric .ClientViewDiv td.mw-table-cell {
+    font-family: 'Consolas', sans-serif;
+}
+
+/* Light Weight view CSS*/
+
+/*** table top left affordance separating row headers and column headers ***/
+.ClientDocument .lightWeightView .mw-table-top-left-affordance {
+    background-color: var(--mw-backgroundColor-tertiary);
+}
+
+div.ClientDocument .lightWeightView .mw-table-bottom-left-affordance {
+    /* Making the border color same as the background color to disable the borders. */
+    border-color: var(--mw-backgroundColor-tertiary);
+    background-color: var(--mw-backgroundColor-tertiary);
+}
+
+/*mw-table's default color is #f5f5f5*/
+div.ClientDocument .lightWeightView .mw-table-row-header-cell {
+    background-color: var(--mw-backgroundColor-tertiary);
+}
+
+
+div.ClientDocument .lightWeightView .mw-table-outer-wrapper,
+div.ClientDocument .lightWeightView .mw-table-outer-wrapper-blurred {
+    /* Making the border color same as the background color to disable the borders. */
+    border-color: var(--mw-backgroundColor-tertiary);
+}
+
+div.ClientDocument .lightWeightView .mw-table-top-right-affordance {
+    /* Making the border color same as the background color to disable the borders. */
+    border-color: var(--mw-backgroundColor-tertiary);
+    background-color: var(--mw-backgroundColor-tertiary);
+}
+
+.ClientDocument .ClientViewDiv.lightWeightView .mw-table-header-label .mw-default-header-cell {
+    padding: 0px;
+}
+
+
+div.ClientDocument.struct .lightWeightView .mw-table-header-label .mw-default-header-cell,
+div.ClientDocument.object .lightWeightView .mw-table-header-label .mw-default-header-cell {
+    text-align: left;
+}
+
+/* When a row is in secondary select, the contrast between the grey colors of the text and background are too less 
+in dark mode, hence on secondary select making the text use mw-color-primary instead*/
+div.ClientDocument.struct .lightWeightView .mw-table-row-selected .TextRenderer.mw-table-cell-content.notEditable,
+div.ClientDocument.object .lightWeightView .mw-table-row-selected .TextRenderer.mw-table-cell-content.notEditable {
+    color: var(--mw-color-primary);
+}
+
+div.ClientDocument.struct .lightWeightView .mw-table-component .mw-table-has-vertical-scroll tr:last-child td {
+    /* Making the border color same as the background color to disable the borders. */
+    border-bottom: var(--mw-backgroundColor-tertiary);
+}
+
+div.ClientDocument.struct .lightWeightView .TextRenderer.mw-table-cell-content.notEditable,
+div.ClientDocument.object .lightWeightView .TextRenderer.mw-table-cell-content.notEditable {
+    color: var(--mw-color-secondary);
+}
+
+/* Remove borders from individual th cells and add to header-wrapper DOM*/
+div.ClientDocument.struct .lightWeightView .mw-table-component .mw-table-header-column {
+    border: none;
+}
+
+div.ClientDocument.struct .lightWeightView .mw-table-header-wrapper {
+    border-bottom: 1px solid var(--mw-borderColor-secondary);
+}
+
+/* Though we have light-weight view, show column header borders for better accessibility of scalar structs */
+div.ClientDocument.struct .lightWeightView .mw-table-component .mw-table-gridstyle-lightweight .mw-table-header-column.mw-table-left-border {
+    border-left: 1px solid var(--mw-borderColor-secondary);
+}
+
+/* Ensure that last child alone has a border, as this cell can be resized to the left of the container. */
+div.ClientDocument.struct .lightWeightView .mw-table-component .mw-table-gridstyle-lightweight .mw-table-header-row th:last-child {
+    border-right: 1px solid var(--mw-borderColor-secondary);
+}
+
+div.ClientDocument.struct .lightWeightView .mw-table-outer-wrapper,
+div.ClientDocument.struct .lightWeightView .mw-table-outer-wrapper-blurred {
+    border-top-color: var(--mw-borderColor-secondary);
+}
+
+/*********************************************************************/
+
+
+/*Scaling factor css */
+.veScalingFactor {
+    display: block;
+    font-size: 12px;
+}
+
+.veScalingFactor .scaleExponent {
+    position: relative;
+    bottom: 1ex;
+    font-size: 80%;
+}
+
+.veScalingFactor .multiply {
+    padding-left: 3px;
+}
+
+/* Add custom css to take precendence over .mw-table-component css on editors (g2094708)*/
+.ClientDocument .mw-table-component .mw-table-cell[data-edit="true"] input.datatoolsCustomEditor {
+    outline: none;
+    border-style: none;
+    padding: 3px;
+    width: calc(100% - 6px);
+    font-family: Arial, sans-serif;
+    font-size: inherit;
+    margin: 0;
+    height: 100%;
+}
+
+/* g2126838: We do not want the table to get a blue border when it is focused */
+div.ClientDocument .ClientViewDiv .mw-table-outer-wrapper-focused {
+    border-color: var(--mw-borderColor-primary);
+}
+
+/* Brushing related css*/
+
+.ClientViewDiv.BrushingMode .mw-table-component .mw-table-cell {
+    cursor: crosshair;
+}
+
+/* The variables used here indicate error and not a region of interest. TODO: Look into figure brushing colors to see
+if they can be matched to a semantically correct color. */
+.ClientViewDiv.BrushingMode {
+    --mw-backgroundColor-dataWidget-selectedFocus: var(--mw-backgroundColor-errorContainer);
+    --mw-backgroundColor-dataWidget-selected: var(--mw-backgroundColor-errorContainer);
+}
+
+.ClientViewDiv.BrushingMode .mw-table-header,
+.ClientViewDiv.BrushingMode .mw-table-cell {
+    --mw-borderColor-focus: var(--mw-borderColor-error);
+    --mw-border-color-focus: var(--mw-borderColor-error);
+}
+
+
+</style><style>/****** CSS for filtering dropdown  ******/
+
+div.sortFilterContextMenu {
+    width: 228px !important;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.20);
+}
+
+div.sortFilterContextMenu .sort-button {
+    text-align: left;
+}
+
+div.sortFilterContextMenu .search-textfield {
+    text-align: center;
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+div.sortFilterContextMenu .ClientDocument.embeddedTable {
+    margin: 5px 5px 0 5px;
+    max-height: 250px;
+    height: auto;
+}
+
+div.sortFilterContextMenu .ClientDocument.embeddedTable.constrictHeight {
+    height: 250px;
+}
+
+div.sortFilterContextMenu .ClientDocument.embeddedTable .ClientViewDiv .mwTable .mw-table-outer-wrapper-blurred,
+div.sortFilterContextMenu .ClientDocument.embeddedTable .ClientViewDiv .mwTable .mw-table-outer-wrapper{
+    border: none;
+}
+
+div.sortFilterContextMenu .ClientDocument.embeddedTable .ClientViewDiv .mwTable .mw-table-outer-wrapper-blurred,
+div.sortFilterContextMenu .ClientDocument.embeddedTable .ClientViewDiv .mwTable .mw-table-outer-wrapper,
+div.sortFilterContextMenu .ClientDocument.embeddedTable .ClientViewDiv .mw-table .mw-table-cell.mw-table-cell-background {
+    background-color: var(--mw-backgroundColor-primary);
+}
+
+div.sortFilterContextMenu .search-textfield .clearTextContainerNode{
+    margin-right: 5px;
+}
+
+/* TODO: Using --mw-color-list-primary for both select-all and clear-all label for now, replace it with the proper semantic variable once its created */
+div.sortFilterContextMenu .select-all-label {
+    float: left;
+    display: inline-block;
+    color:var(--mw-color-list-primary);
+    font-family: Arial, regular;
+    background-color: var(--mw-backgroundColor-primary);
+    padding-top : 3px;
+    padding-bottom: 3px;
+    margin-left: 10px;
+    font-size: 11px;
+}
+
+div.sortFilterContextMenu .clear-all-label {
+    float: right;
+    display: inline-block;
+    padding-top : 3px;
+    padding-bottom: 3px;
+    margin-right: 10px;
+    color:var(--mw-color-list-primary);
+    font-family: Arial, regular;
+    background-color: var(--mw-backgroundColor-primary);
+    font-size: 11px;
+}
+
+/*** CSS for table inside filtering dropdown ***/
+div.sortFilterContextMenu .ClientDocument.embeddedTable .ClientViewDiv .mw-table-outer-wrapper,
+div.sortFilterContextMenu .ClientDocument.embeddedTable .ClientViewDiv .mw-table-outer-wrapper-blurred {
+    /* Making the border color same as the background color to disable the borders. Ideally we should be using a light weight table instead */
+    border-color: var(--mw-backgroundColor-primary);
+}
+
+div.sortFilterContextMenu .ClientDocument.embeddedTable .ClientViewDiv .mwTableCell,
+div.sortFilterContextMenu .ClientDocument.embeddedTable .ClientViewDiv .mw-table-cell {
+    /* Making the border color same as the background color to disable the borders. Ideally we should be using a light weight table instead */
+    border-color: var(--mw-backgroundColor-primary);
+}
+
+
+/****** Remove padding on cells for table in contextMenu to mimic Interactive Numerics view  ******/
+
+div.sortFilterContextMenu .embeddedTable .mwTableCell,
+div.sortFilterContextMenu .embeddedTable .mw-table-cell {
+    padding: 0;
+}
+
+div.sortFilterContextMenu .embeddedTable .mw-table-header-column,
+div.sortFilterContextMenu .embeddedTable .mw-table-row-header-cell {
+    padding: 0;
+}
+
+div.sortFilterContextMenu .embeddedTable .mw-table-component .mw-table-has-vertical-scroll tr:last-child td {
+    /* Using the background color for now, needs to be replaced with a border color once that is available */
+    border-bottom: var(--mw-backgroundColor-tertiary);
+
+}
+
+div.sortFilterContextMenu .embeddedTable .summaryBar {
+    display: none;
+}
+
+div.sortFilterContextMenu .embeddedTable ._COLUMN_HEADER_CLASS {
+    display: none;
+}
+
+div.sortFilterContextMenu .embeddedTable ._ROW_HEADER_CLASS {
+    display: none;
+}
+
+div.sortFilterContextMenu .embeddedTable .mw-table-header-wrapper {
+    display: none;
+}
+
+div.sortFilterContextMenu .embeddedTable .mw-table-row-header-container {
+    display: none;
+}
+
+
+div.sortFilterContextMenu .filteredSummary,
+div.NumericFilterContextMenu .filteredSummary{
+    display: block;
+    padding-top: 5px;
+     border-top: 1px solid var(--mw-borderColor-secondary);
+}
+
+div.sortFilterContextMenu .filteredSummary.mwWidget.mwLabel .mwContentWrapperNode .mwIconAndTextContainerNode .mwTextNode,
+div.NumericFilterContextMenu .filteredSummary.mwWidget.mwLabel .mwContentWrapperNode .mwIconAndTextContainerNode .mwTextNode,
+div.sortFilterContextMenu .ColumnNameFooter .mwTextNode,
+div.NumericFilterContextMenu .ColumnNameFooter .mwTextNode{
+    font-family: Arial, regular;
+    font-size: 11px;
+}
+
+/*
+    g2400979: The i18n mwTextNode contains an extra mwTextLine child.
+    This is used to place the locale specific strings and hence needs its own css styles.
+*/
+div.sortFilterContextMenu .filteredSummary.mwWidget.mwLabel .mwContentWrapperNode .mwIconAndTextContainerNode .mwTextNode .mwTextLine,
+div.NumericFilterContextMenu .filteredSummary.mwWidget.mwLabel .mwContentWrapperNode .mwIconAndTextContainerNode .mwTextNode .mwTextLine {
+    font-family: Arial, regular;
+    font-size: 11px;
+}
+
+
+div.sortFilterContextMenu .filteredSummary .mwTextNode,
+div.NumericFilterContextMenu .filteredSummary .mwTextNode {
+    color: var(--mw-color-secondary);
+}
+
+div.sortFilterContextMenu .ColumnNameFooter .mwTextNode,
+div.NumericFilterContextMenu .ColumnNameFooter .mwTextNode {
+    color: var(--mw-color-primary);
+}
+
+div.sortFilterContextMenu .ColumnNameFooter,
+div.NumericFilterContextMenu .ColumnNameFooter{
+    display: block;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+/***** Edit Categories menu section *****/
+.mwIconNode.editCategoriesIcon {
+    width: 16px;
+    height: 16px;
+    background: url(release/images/editCats2-c0a2d972e46593bcb7f886b5e6ba43b9.png) no-repeat left;
+}
+</style><style>div.NumericFilterContextMenu {
+    max-width: 248px;
+    width: 248px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.20);
+}
+
+div.NumericFilterContextMenu .NumericHeaderMenu,
+div.NumericFilterContextMenu .DateTimeHeaderMenu {
+    border-top: 1px solid var(--mw-borderColor-secondary);
+    margin: 1px;
+}
+
+div.NumericFilterContextMenu .NumericHeaderMenu .FilteredRange,
+div.NumericFilterContextMenu .DateTimeHeaderMenu .FilteredRangeDT,
+div.NumericFilterContextMenu .NumericHeaderMenu .SelectedRange {
+    display: block;
+    height: 22px;
+}
+
+div.NumericFilterContextMenu .DateTimeHeaderMenu .FilteredRangeDT.Multiline{
+    display: block;
+    height: 30px;
+}
+
+div.NumericFilterContextMenu .DateTimeHeaderMenu .SelectedRangeDT {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.NumericFilterContextMenu .NumericHeaderMenu .IncludeMissing,
+div.NumericFilterContextMenu .DateTimeHeaderMenu .IncludeMissing {
+    display: block;
+    height: 18px;
+    padding-top: 10px;
+}
+
+div.NumericFilterContextMenu .NumericHeaderMenu .NumericHeaderMenuSeparator,
+div.NumericFilterContextMenu .DateTimeHeaderMenu .NumericHeaderMenuSeparator {
+    border-bottom: 1px solid var(--mw-borderColor-secondary);
+}
+
+/* Ensure that the height of this overlay includes +10px to account for parent's margins. Without this,
+   the overlay will still allow mouse events at the borders to go through.*/
+div.NumericFilterContextMenu .FilteredHistogram .loading,
+div.NumericFilterContextMenu .FilteredHistogramDT .loading {
+    top: auto;
+    left: auto;
+    width: inherit;
+    height: 180px;
+}
+
+div.NumericFilterContextMenu .FilteredHistogram .loading.show,
+div.NumericFilterContextMenu .FilteredHistogramDT .loading.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+div.NumericFilterContextMenu .FilteredHistogram .loading.hide,
+div.NumericFilterContextMenu .FilteredHistogramDT .loading.hide {
+    visibility: hidden;
+    opacity: 0;
+}
+
+div.NumericFilterContextMenu .FilteredHistogram .loading.disable,
+div.NumericFilterContextMenu .FilteredHistogramDT .loading.disable {
+    visibility: visible;
+    opacity: 0.5;
+    background-image: none;
+}
+/* Setting max-width to 100px. Width of filtering widget is 246, so even if both Min and Max labels max out, they won't
+  run into each other */
+div.NumericFilterContextMenu .NumericHeaderMenu .FilteredRange .mwLabel {
+    display: inline-block;
+    padding-top: 2px;
+    max-width: 100px;
+}
+
+div.NumericFilterContextMenu .DateTimeHeaderMenu .FilteredRangeDT .mwLabel {
+    display: inline-block;
+    padding-top: 2px;
+}
+
+div.NumericFilterContextMenu .NumericHeaderMenu .FilteredRange .MinLabel,
+div.NumericFilterContextMenu .DateTimeHeaderMenu .FilteredRangeDT .MinLabel {
+    float: left;
+    margin-left: 10px;
+}
+
+div.NumericFilterContextMenu .NumericHeaderMenu .FilteredRange .MaxLabel,
+div.NumericFilterContextMenu .DateTimeHeaderMenu .FilteredRangeDT .MaxLabel  {
+    float: right;
+    margin-right: 10px;
+}
+
+div.NumericFilterContextMenu .NumericHeaderMenu .FilteredHistogram,
+div.NumericFilterContextMenu .DateTimeHeaderMenu .FilteredHistogramDT {
+    width: 100%;
+    margin: 5px 0px 5px 0px;
+    height:  170px;
+}
+
+/*Ensure that position is relative, else loading overlay will not be positioned absolute w.r.t figure*/
+div.NumericFilterContextMenu .NumericHeaderMenu .FilteredHistogram,
+div.NumericFilterContextMenu .DateTimeHeaderMenu .FilteredHistogramDT {
+    position: relative;
+}
+
+/* The !important CSS is less than ideal, we will be removing this once SceneWidget does not update the cursor CSS as inline styles
+   If we do not specify !important, their inline styles take precedence over ours and we are limited by server round-trip
+   evaluations to be setting inline styles for cursor (g1801077) */
+div.NumericFilterContextMenu .NumericHeaderMenu .FilteredHistogram .ddt_figure_view,
+div.NumericFilterContextMenu .DateTimeHeaderMenu .FilteredHistogramDT .ddt_figure_view {
+    width: 100%;
+    height: 170px;
+    cursor: initial !important;
+}
+
+div.NumericFilterContextMenu .NumericHeaderMenu .FilteredHistogram .ddt_figure_view.highlightGrabber,
+div.NumericFilterContextMenu .DateTimeHeaderMenu .FilteredHistogramDT .ddt_figure_view.highlightGrabber {
+    cursor: col-resize !important;
+}
+
+div.NumericFilterContextMenu .NumericHeaderMenu .SelectedRange,
+div.NumericFilterContextMenu .DateTimeHeaderMenu .SelectedRangeDT {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 5px;
+}
+
+div.NumericFilterContextMenu .NumericHeaderMenu .SelectedRange .mwTextField {
+    width: 75px;
+    display: inline-block;
+}
+
+div.NumericFilterContextMenu .NumericHeaderMenu .SelectedRange .mwTextField .mwInputNode {
+    text-align: right;
+}
+
+div.NumericFilterContextMenu .NumericHeaderMenu .SelectedRange .SelectedMinRange,
+div.NumericFilterContextMenu .DateTimeHeaderMenu .SelectedRangeDT .SelectedMinRange {
+    float: left;
+}
+
+div.NumericFilterContextMenu .NumericHeaderMenu .SelectedRange .SelectedMaxRange,
+div.NumericFilterContextMenu .DateTimeHeaderMenu .SelectedRangeDT .SelectedMaxRange {
+    float: right;
+}
+
+div.NumericFilterContextMenu .NumericHeaderMenu .SelectedRange .veTextField.edited,
+div.NumericFilterContextMenu .NumericHeaderMenu .SelectedRange .veTextField.edited .mwInputNode,
+div.NumericFilterContextMenu .DateTimeHeaderMenu .SelectedRangeDT .veTextField.edited,
+div.NumericFilterContextMenu .DateTimeHeaderMenu .SelectedRangeDT .veTextField.edited .mwTextField {
+    /* This background color is not meant for text field in specific. Change it once the appropriate semantic variable is introduced */
+    background-color: var(--mw-backgroundColor-autofix);
+}
+
+div.NumericFilterContextMenu .DateTimeHeaderMenu .SelectedRangeDT .veTextField .mwTextFieldContainerNode.edited,
+div.NumericFilterContextMenu .DateTimeHeaderMenu .SelectedRangeDT .veTextField .mwTextFieldContainerNode.edited .mwTextField  {
+    /* This background color is not meant for text field in specific. Change it once the appropriate semantic variable is introduced */
+    background-color: var(--mw-backgroundColor-autofix);
+}
+
+div.NumericFilterContextMenu .NumericHeaderMenu .IncludeMissing,
+div.NumericFilterContextMenu .DateTimeHeaderMenu .IncludeMissing {
+    margin-left: 10px;
+}
+
+div.NumericFilterContextMenu .NumericHeaderMenu .IncludeMissing .IncludeMissingLabel,
+div.NumericFilterContextMenu .DateTimeHeaderMenu .IncludeMissing .IncludeMissingLabel {
+    padding-left: 5px;
+    font-size: 12px;
+    font-family: Arial, regular;
+}
+
+div.NumericFilterContextMenu .NumericHeaderMenu .IncludeMissing.HideSection,
+div.NumericFilterContextMenu .DateTimeHeaderMenu .IncludeMissing.HideSection {
+    height: 0px;
+    padding-top: 5px;
+}
+
+/* JS Filter Figure Modifications */
+div.NumericFilterContextMenu .FilteredHistogram mw-datatools-filterfigurerenderer div.filterfigureWrapper {
+    position: relative;
+    height: 100%;
+}
+
+div.NumericFilterContextMenu .FilteredHistogram mw-datatools-filterfigurerenderer .filterfigureSliders {
+    position: absolute;
+    left: 0px;
+
+    height: 16px;
+    width: 100%;
+}</style><style>/* SpanRenderer CSS*/
+
+/* Setting height to be height of parent, transforming is shifting contents here (g1880176)*/
+div.spanCellParent {
+    height: 22px;
+    display: flex;
+}
+
+div.spanCellParent > div.spanCell {
+    flex: 1;
+    border-right: 1px solid rgb(191,191,191);
+    padding: 3px;
+    min-width: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div.spanCellParent > div.spanCell:last-child {
+    border-right: none;
+}
+
+.mw-table-cell-content.loadingRenderer {
+    text-overflow: ellipsis;
+    color: rgb(186, 186, 186);
+    overflow: hidden;
+    text-align: left;
+}
+
+.datatools-custom-renderer.mw-table-cell-content {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre;
+}
+
+.datatools-custom-renderer.mw-table-cell-content.MetaData {
+    font-style: italic;
+}
+/* renderer alignments */
+
+.datatools-custom-renderer.mw-table-cell-content.right {
+    text-align: right;
+}
+
+.datatools-custom-renderer.mw-table-cell-content.center {
+    text-align: center;
+}
+
+/* Icon Renderer CSS */
+
+.datatools-custom-renderer.mw-table-cell-content.IconTextRenderer {
+    width: auto;
+    height: 19px;
+    vertical-align: middle;
+    line-height: 1.3;
+}
+
+#dataToolsDragIcon svg{
+    margin-right: 5px;
+}
+
+.datatools-custom-renderer.mw-table-cell-content.MultiIconTextRendererTop {
+    display: flex;
+}
+
+.datatools-custom-renderer.mw-table-cell-content .MultiIconTextRenderer {
+    padding-left: 35px;
+    width: auto;
+    height: 19px;
+    vertical-align: middle;
+    line-height: 1.3;
+}
+
+.varIconNode {
+    display: flex;
+}
+
+.varIconNode .datatools-custom-renderer{
+    margin-left: 3px;
+}
+
+.varIconNode > svg {
+    /* Set the min/max width for SVG variable icons */
+    min-width: 16px;
+    min-height: 16px;
+}
+
+.mw-tree-cell-content[data-renderer-type='varIconNode'] {
+    display: flex;
+}
+
+.mw-tree-cell-content[data-renderer-type='varIconNode'] .datatools-custom-renderer {
+    margin-left: 3px;
+}
+
+.mw-tree-cell-content[data-renderer-type='varIconNode'] > svg {
+    /* Set the min/max width for SVG variable icons */
+    min-width: 16px;
+    min-height: 16px;
+}</style><style>.ClientDocument.table .ClientViewDiv .mw-table-header-label .CustomTableHeaderRenderer{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre;
+}
+
+/* TechDebt until table gives us hooks to place text in corner spacer node */
+.ClientDocument .ClientViewDiv .mw-table-top-left-affordance .CornerSpacerText {
+    padding-right: 3px;
+    text-align: center;
+    opacity: 0.5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 15px;
+    white-space: nowrap;
+}
+
+.ClientDocument.table .ClientViewDiv .mwTableHeaderWrapper .mwTableHeaderMenuAffordance{
+    margin-top: 1px;
+    margin-right: 2px;
+}
+
+.ClientDocument.table .ClientViewDiv .mw-table-header-label .CustomTableHeaderRenderer[data-filtered="true"] .customIcon {
+    background: url(release/images/filter-da2cf95bff34b500ac8584c3ec8478f7.png) no-repeat left;
+}
+
+.ClientDocument.table .ClientViewDiv .mw-table-header-label .CustomTableHeaderRenderer[data-sort-direction="ASC"] .customIcon {
+    background: url(release/images/SortAscending-f2cae0bdcc928db080df87b9d6082af7.png) no-repeat left;
+}
+
+.ClientDocument.table .ClientViewDiv .mw-table-header-label .CustomTableHeaderRenderer[data-sort-direction="DESC"] .customIcon {
+    background: url(release/images/SortDescending-2728c9166e36293a85371711fa5d8793.png) no-repeat left;
+}
+
+.ClientDocument.table .ClientViewDiv .mw-table-header-label .CustomTableHeaderRenderer[data-sort-direction="ASC"][data-filtered="true"] .customIcon {
+    background: url(release/images/SortAscendingWithFiltering-8d1b63cc13c725e29d7cfe2e08d3b8fe.png) no-repeat left;
+}
+
+.ClientDocument.table .ClientViewDiv .mw-table-header-label .CustomTableHeaderRenderer[data-sort-direction="DESC"][data-filtered="true"] .customIcon {
+    background: url(release/images/SortDescendingWithFiltering-8d2d01106f97a6947f289c32cde707de.png) no-repeat left;
+}
+
+.ClientDocument.table .ClientViewDiv .mw-table-header-label .CustomTableHeaderRenderer .customIcon {
+    float: left;
+    width: 12px;
+    height: 12px;
+    z-index: 5;
+    left: 3px;
+    opacity: 0.5;
+    display: inline-block;
+}
+/*NOTE: mw-table to check on their visual design styles and get back to us (g2062384)*/
+.ClientDocument .ClientViewDiv .mw-table-header-column[data-edit-state="true"] .mw-table-header-label {
+    max-width: 100%;
+}
+</style><style>/****** CSS for Categorical Cleaner  ******/
+
+.mwDialog.categoricalCleaner {
+    height: 400px;
+    width: 400px;
+}
+
+.mwDialog.categoricalCleaner .mwDialogBody .dialog-content-area {
+    height: 90%;
+}
+
+.mwDialog.categoricalCleaner .mwDialogBody .dialog-content-area .categoriesSummaryView {
+    height: 80%;
+    width: 100%;
+}
+
+.categoriesSummaryView .ClientViewDiv .mw-table-component .mw-table-row.mw-table-row-selected .mw-table-cell-background {
+    background-color: transparent;
+}
+
+.ClientViewDiv .mw-table-component .mw-table-row .mw-table-cell-background {
+    background-color: transparent;
+}
+
+.ClientViewDiv .mw-table-header-label {
+    text-align: center;
+}
+
+.categoriesSummaryView .ClientViewDiv {
+    max-height: 100000px;
+    height: 100%;
+    width: 100%;
+}
+
+.categoriesSummaryView .ClientViewDiv {
+    height: 100%;
+    margin-left: 0;
+    margin-top: 2px;
+}
+
+.categoriesSummaryView .summaryBar {
+    display: none;
+}
+
+.categoriesSummaryView .ClientViewDiv {
+    width: 100%;
+}
+
+.categoriesSummaryView .ClientViewDiv {
+    margin-left: 0;
+}
+
+.categoriesSummaryView .summaryBar {
+    display: none;
+}
+
+/* uncomment to remove gridlines */
+/*.categoriesSummaryView .ClientViewDiv .mwTableCell,
+.categoriesSummaryView .ClientViewDiv .mw-table-cell {
+    !*border-color: #f5f5f5;*!
+}*/
+
+/* For a spancellparent, we need to set the transform and calc the height and
+width since the mw-table sets cell styling with padding 3px.
+In case of the variableeditormain.css looks like we removed this styling on
+spanCellParent and offset it by overriding the mw-table cell padding to 0. This 
+resulted in the variableeditormain.css having to set the padding on each of the table
+cell content. The right way would be to remove all the additional padding from VariableOutputHandler.css,
+and the mw-table should handle the spanCell padding the right way.
+*/
+.categoriesSummaryView .ClientViewDiv .spanCellParent {
+    display: flex;
+    height: calc(100% + 6px);
+    width: calc(100% + 6px);
+    transform: translate(-3px, -3px);
+}
+
+.categoriesSummaryView .ClientViewDiv .spanCell {
+    border-right: none;
+    min-width: 5px;
+    flex: auto;
+    padding: 5px;
+}
+
+.categoriesSummaryView .ClientViewDiv .dataBarNode {
+    background: var(--mw-color-variableMetadata);
+    height: 10px;
+    top: 0;
+    left: 0;
+}
+
+.categoriesSummaryView .ClientViewDiv .mw-table-row-selected .dataBarNode {
+    background: var(--mw-color-variableMetadata-selected);
+}
+
+
+.categoriesSummaryView .ClientViewDiv .spanCell.dataBarParentNode {
+    width: 60%;
+}
+
+.categoriesSummaryView .ClientViewDiv .spanCell.categoryCounts {
+    text-overflow: 'ellipses';
+    overflow: hidden;
+    text-align: right;
+    width: 40%;
+}
+
+.categoriesSummaryView .ClientViewDiv table tbody .mw-table-row td:first-child {
+    text-align: center;
+}
+
+/* uncomment to remove gridlines */
+/*.categoriesSummaryView .ClientViewDiv td.mw-table-cell {
+    !*border: #f5f5f5;*!
+}*/
+
+.mwDialog.categoricalCleaner .undefinedInformation {
+    padding-bottom: 10px;
+    padding-top: 3px;
+}
+
+.mwDialog.categoricalCleaner .undefinedCategoriesLabel,
+.mwDialog.categoricalCleaner .undefinedCategoriesValue {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--mw-color-secondary);
+    font-weight: bold;
+    font-size: 11px;
+    display: inline-block;
+}
+
+.mwDialog.categoricalCleaner .addCategories {
+    height: 20px;
+    left: 5px;
+    display: inline-block;
+}
+
+.mwDialog.categoricalCleaner .removeCategories {
+    height: 20px;
+    left: 10px;
+    display: inline-block;
+}
+
+.mwDialog.categoricalCleaner .mergeCategories {
+    left: 15px;
+    height: 20px;
+    display: inline-block;
+}
+
+.mwDialog.categoricalCleaner .mergeCategories .mwComboBox {
+    width: 136px;
+}
+
+.mwDialog.categoricalCleaner .mwDialog {
+    min-width: 250px;
+}
+
+.mwDialog.categoricalCleaner .search-categories .mwSearchTextField {
+    width: 100%;
+}</style><style>.iconVariableEditorMatrix {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -2px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorTallMatrix {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -22px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorCell {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -42px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorTallCell {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -62px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorLogic {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -82px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorTallLogical {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -102px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorObject {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -122px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorTallObject {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -142px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorSparse {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -162px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorTallSparse {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -182px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorChar {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -202px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorTallChar {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -222px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorStruct {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -242px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorTallStruct {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -262px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorTimeseries {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -282px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorTallTimeseries {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -302px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorMatlabTable {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -322px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorTallMatlabTable {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -342px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorCategorical {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -362px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorTallCategorical {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -382px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorDatetime {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -402px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorTallDatetime {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -422px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorDuration {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -442px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorTallDuration {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -462px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorCalendarDuration {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -482px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorTallCalendarDuration {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -502px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorString {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -522px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorTallString {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -542px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorTimetable {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -562px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorTallTimetable {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -582px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorMixed {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -602px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+
+.iconVariableEditorTall {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -622px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+/* VE Generic Icons*/
+
+.iconVariableEditorNoVarDisplay {
+    background: url(release/images/variableeditor_icons-34fc4830207157094a3f882037c5e1b1.png) no-repeat -2px -642px;
+    /* Accommodating new label web widget */
+    height: 16px;
+    width: 16px;
+}
+.sortAscendingIcon {
+    width: 16px;
+    height: 16px;
+    background: url(release/images/sort_ascend_16-d96ef76f8c53a5376c14b9c07ce14f84.png) no-repeat left;
+}
+
+.sortDescendingIcon {
+    width: 16px;
+    height: 16px;
+    background: url(release/images/sort_descend_16-c6193032c6a1ba118aa1668784449989.png) no-repeat left;
+}
+
+/* VE Toolstrip Icons*/
+.openVEVariable {
+    width: 16px;
+    height: 16px;
+    background: url(release/images/variableEdit_16-9498905fa5e48a575115cf7a7f585e16.png) no-repeat left;
+}
+
+.insertEntireRow_24 {
+    background: url(release/images/insertEntireRow_24-d5877c4ae204f81469c51579510a06cd.png) no-repeat left;
+}
+
+.deleteEntireRow_24 {
+    background: url(release/images/deleteEntireRow_24-ac41d9d4a43a1fec0ffe5bcfe87d9f7e.png) no-repeat left;
+}
+
+.insertEntireRow_16 {
+    background: url(release/images/insertEntireRow_16-449be6c9690ecb1ef181368352af995f.png) no-repeat left;
+}
+
+.deleteEntireRow_16 {
+    background: url(release/images/deleteEntireRow_16-aa465db167fbf7f8e67f1c8f29834ebd.png) no-repeat left;
+}
+
+.transpose_16 {
+    width: 16px;
+    height: 16px;
+    background: url(release/images/transpose-c33f07ce34640ce16f3fa72595064c3e.png) no-repeat left;
+}
+
+.sortaz_ascending_16 {
+    background: url(release/images/sort_az_ascending-906444ffd38869f2c919f9862707944c.png) no-repeat left;
+}
+
+.go_up_24 {
+    background: url(release/images/up_24-bcb58ef37ea017a5d28fb601c715b873.png) no-repeat left;
+}
+.go_up_16 {
+    background: url(release/images/up_16-86f0aef3f0e945c6dd71d48db30e8bcb.png) no-repeat left;
+}
+
+/* VE Contextmenu Icons*/
+
+.deleteColumn_16 {
+    width: 16px;
+    height: 16px;
+    background: url(release/images/deleteColumn-68c81e6677ecd24020af91bcf8c9a559.png) no-repeat left;
+}
+
+.deleteRow_16 {
+    width: 16px;
+    height: 16px;
+    background: url(release/images/deleteRow-05bc253c0adf120928bcd03c6034e244.png) no-repeat left;
+}
+
+.addVariable_16 {
+    width: 16px;
+    height: 16px;
+    background: url(release/images/addVariable-4531c5167f5e4deed7b7f2ab713127ae.png) no-repeat left;
+}
+
+.insertColumnLeft_16 {
+    width: 16px;
+    height: 16px;
+    background: url(release/images/insertColumnLeft-3ad2a039b83cec49dda5f28322519cd5.png) no-repeat left;
+}
+
+.insertColumnRight_16 {
+    width: 16px;
+    height: 16px;
+    background: url(release/images/insertColumnRight-ad3963e78f580dff31511f78b4232404.png) no-repeat left;
+}
+
+.insertRowAbove_16 {
+    width: 16px;
+    height: 16px;
+    background: url(release/images/insertRowAbove-37ad408aed114075fa46bad591f3563d.png) no-repeat left;
+}
+
+.insertRowBelow_16 {
+    width: 16px;
+    height: 16px;
+    background: url(release/images/insertRowBelow-6ac54464acabb9e2446c2187ba6b0b76.png) no-repeat left;
+}
+
+.datatools-custom-renderer .publicAccess {
+    background: url(release/images/variable_property_public-5366d9a459d756516a4e1227f29cba77.png) no-repeat;
+    /* Show the property public access icon */
+    height: 16px;
+    width: 16px;
+    margin-left: 20px;
+}
+
+.datatools-custom-renderer .protectedAccess {
+    background: url(release/images/variable_property_protected-d4a9ce2b261543123d3ba4c97d9dc22f.png) no-repeat;
+    /* Show the property protected access icon */
+    height: 16px;
+    width: 16px;
+    margin-left: 20px;
+}
+
+.datatools-custom-renderer .privateAccess {
+    background: url(release/images/variable_property_private-700ef0c37f00916ed22eabf899b99d30.png) no-repeat;
+    /* Show the property private access icon */
+    height: 16px;
+    width: 16px;
+    margin-left: 20px;
+}
+
+.datatools-custom-renderer .MultiIconTextRenderer {
+    /* Used in conjunction with the property access icons so that the property type icons align */
+    margin-left: -34px;
+}
+
+.brushing_16 {
+    width: 24px;
+    height: 24px;
+    background: url(release/images/brushing2_16-08c564249a43406816f1df6e7e8876a6.png) no-repeat left;
+}
+
+.editTableMetaData {
+    width: 16px;
+    height: 16px;
+    background: url(release/images/editData-58b8abe35612fe4ccd556268621c9d46.svg) no-repeat left;
+}
+
+.editVariableMetaData {
+    width: 16px;
+    height: 16px;
+    background: url(release/images/variableEdit-e00e7170a931c1730fc471be41581f0b.svg) no-repeat left;
+}
+
+.plotOptions {
+    width: 24px;
+    height: 24px;
+    background: url(release/images/plotOptions-0aada02e3a5453613f86bc5a890507ee.svg) no-repeat left;
+}
+
+.sparkline_icon {
+    width: 24px;
+    height: 24px;
+    background: url(release/images/sparkline_icon-ec854837d5344451985f2683bfae0db2.svg) no-repeat left;
+}</style><style>@media screen {
+    .vePrintDom {
+        display: none
+    }
+}
+
+@media print {
+
+    @page {
+        margin: 5%;
+    }
+
+    table {
+        page-break-after: always;
+    }
+    #printTable {
+        width: 100%;
+    }
+
+    #leftHeaderContent {
+        white-space: pre;
+    }
+    #veHeader {
+        border: 1px solid black;
+        margin-bottom: 5mm;
+        padding: 3mm;
+        display: block;
+    }
+    #veHeader #leftHeader {
+        display: inline-block;
+    }
+    #veHeader #rightHeader {
+        float: right;
+        display: inline-block;
+    }
+
+    #printTable .ClientViewDiv .textArea {
+        width: 100%;
+        height: 100%;
+        white-space: pre;
+    }
+
+    /*#rightHeader:before {
+        counter-increment: page;
+        content:"Page " counter(page);
+        left: 0;
+        top: 100%;
+        white-space: nowrap;
+        z-index: 20;
+        -moz-border-radius: 5px;
+        -moz-box-shadow: 0px 0px 4px #222;
+        background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+    }*/
+
+
+    table { page-break-inside:auto }
+    tr    { page-break-inside:avoid; page-break-after:auto }
+}</style><style> /** Copyright 2022 The MathWorks, Inc. */
+
+ .veGotoDialog .veGotoDialogContent .rowLabel {
+    margin-right: 0.3em;
+}
+
+.veGotoDialog .veGotoDialogContent .rowInput {
+    float: right;
+}
+
+.veGotoDialog .veGotoDialogContent .colLabel {
+    margin-right: 0.3em;
+}
+
+.veGotoDialog .veGotoDialogContent .colInput {
+    float: right;
+}</style><style>/* This must include variableeditor_client component's css alone*/
+</style><style>/* This file should only have 1-p css dependencies as well as export.css
+ * Note: We do not have tooling to copy transitive CSS yet, this file is to be used by other downstream components.
+ */</style><style>.vePopoutDialog div.ClientDocument,
+.popoutWrapper div.ClientDocument{
+    position: relative;
+    height: auto;
+	cursor: default;
+}
+
+/* For vePopoutDialog in MOL, the original manager from which the document was spawned has a summarybar, hence add more
+   specific css. */
+.vePopoutDialog div.ClientDocument .ClientViewDiv.hasSummaryBar,
+.popoutWrapper div.ClientDocument .ClientViewDiv{
+    height: 100%;
+}
+
+/* Changing this will affect table height for smaller tables in popouts*/
+.vePopoutDialog div.ClientDocument.DataFitToViewport .ClientViewDiv,
+.popoutWrapper div.ClientDocument.DataFitToViewport .ClientViewDiv{
+    height: auto;
+}
+
+/* Account for the SummaryBar if present in the UIVariableEditor */
+.popoutWrapper div.ClientDocument .ClientViewDiv.hasSummaryBar {
+    margin-top: 2px;
+    /*Default is 18px, but account for the 2px margin-top*/
+    height: calc(100% - 20px);
+}
+
+
+/*TODO: Debt: Scaling factor will be placed in the top-left affordance until the table gives official hooks */
+div.ClientDocument.numeric .ClientViewDiv.WithScalingFactor .mw-table-top-left-affordance,
+div.ClientDocument.numeric .ClientViewDiv.WithScalingFactor .mw-table-row-header-container,
+div.ClientDocument.numeric .ClientViewDiv.WithScalingFactor .mw-table-row-header {
+    min-width: 60px !important;
+    max-width: 60px !important;
+}
+
+div.ClientDocument.numeric .ClientViewDiv.WithScalingFactor .veScalingFactor {
+    font-weight: bold;
+}
+
+/* CSS Formatting for VEPopoutDialogs so that the ClientDocument fits to container */
+.vePopoutDialog.mwDialog .mwDialogBody.mwNoButtons {
+    overflow: hidden;
+    height: calc(100% - 31px);
+}
+
+.vePopoutDialog div.ClientDocument,
+.vePopoutDialog .vePopoutDialogContent {
+   height: 100%;
+}
+
+.vePopoutDialog.mwDialog .vePopoutDialogContent .veScalingFactor {
+    height: 17px;
+    padding-top: 5px;
+}
+
+.vePopoutDialog.mwDialog .vePopoutDialogContent.hasScalingFactor {
+    margin-top: 3px;
+}
+
+/*.vePopoutDialog .ClientDocument.numeric .mw-table-top-left-affordance,
+.popoutWrapper .ClientDocument.numeric .mw-table-top-left-affordance {
+    border-right-color: lightgrey;
+}*/
+
+/* Set transparent for numeric alone so that it blends with the look and feel*/
+/*.vePopoutDialog .ClientDocument.numeric .mw-table-component .mw-table-top-right-affordance,
+.popoutWrapper .ClientDocument.numeric .mw-table-component .mw-table-top-right-affordance{
+    background-color: transparent;
+    border-bottom: 0px;
+}*/
+
+/*.vePopoutDialog .ClientDocument.numeric .mw-table-row-header-label,
+.popoutWrapper .ClientDocument.numeric .mw-table-row-header-label{
+    visibility: visible;
+}*/
+
+/* Set padding-left to 0px, Without this, the headers and data will be mis-aligned*/
+/*.vePopoutDialog div.ClientDocument.numeric .mw-table-header-label,
+.popoutWrapper div.ClientDocument.numeric .mw-table-header-label {
+    visibility: visible;
+    padding-left: 0px;
+}*/
+
+/* Adding this until tables give us hooks to access the mw-table-outer-wrapper*/
+/*.vePopoutDialog div.ClientDocument.numeric .mw-table-outer-wrapper,
+.vePopoutDialog div.ClientDocument.numeric .mw-table-outer-wrapper-blurred,
+.popoutWrapper div.ClientDocument.numeric .mw-table-outer-wrapper,
+.popoutWrapper div.ClientDocument.numeric .mw-table-outer-wrapper-blurred {
+    right: inherit;
+}
+*//* We do not want headers to stick to the border, adding a bit of padding*//*
+.vePopoutDialog .ClientDocument.numeric .ClientViewDiv .mw-table-row-header-label.mw-table-index-only,
+.popoutWrapper .ClientDocument.numeric .ClientViewDiv .mw-table-row-header-label.mw-table-index-only{
+    padding-right: 3px;
+}*/
+
+.vePopoutDialog .ClientDocument.numeric .ClientViewDiv td.mw-table-cell,
+.popoutWrapper .ClientDocument.numeric .ClientViewDiv td.mw-table-cell{
+    font-family: 'Arial', sans-serif;
+}
+
+.popoutWrapper .veScalingFactor {
+    padding-top: 3px;
+    padding-left: 8px;
+    font-family: 'consolas', sans-serif;
+}
+
+.popoutWrapper .veScalingFactor .scaleExponent {
+    position: relative;
+    bottom: 1ex;
+    font-size: 80%;
+}
+
+/*.popoutWrapper .ClientDocument.table .ClientViewDiv .mw-table .mw-table-cell,
+.vePopoutDialog .ClientDocument.table .ClientViewDiv .mw-table .mw-table-cell {
+    padding: 0px;
+}*/
+
+/*.popoutWrapper .ClientDocument .ClientViewDiv .mw-table .mw-table-cell .mw-table-cell-content,
+.vePopoutDialog .ClientDocument .ClientViewDiv .mw-table .mw-table-cell .mw-table-cell-content {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.popoutWrapper .ClientDocument .ClientViewDiv.lightWeightView .mw-table .mw-table-cell .mw-table-cell-content,
+.vePopoutDialog .ClientDocument .ClientViewDiv.lightWeightView .mw-table .mw-table-cell .mw-table-cell-content {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 3px;
+    padding-right: 3px;
+}*/
+
+.popoutWrapper .table .mw-table-cell-content.timetabletime,
+.vePopoutDialog .table .mw-table-cell-content.timetabletime {
+    background-color: var(--mw-backgroundColor-primary);
+}
+
+/* The defaults for VariableEditor has padding on all 4 sides */
+/*.popoutWrapper .ClientDocument.numeric .ClientViewDiv .mw-table .mw-table-cell .mw-table-cell-content,
+.vePopoutDialog .ClientDocument.numeric .ClientViewDiv .mw-table .mw-table-cell .mw-table-cell-content{
+    padding: 0px;
+}*/
+
+/* Summary Bar Custom CSS */
+.popoutWrapper div.ClientDocument div.summaryBar .headerElement {
+   font-family: sans-serif;
+}
+
+.popoutWrapper div.ClientDocument div.summaryBar .summaryBarVarName {
+    display: none;
+}
+
+.popoutWrapper div.ClientDocument.unsupportedView div.summaryBar.noType .summaryBarVarName{
+   display: inline;
+   padding-left: 5px;
+}
+
+.popoutWrapper div.ClientDocument div.summaryBar .summaryBarAssign {
+    display: none;
+}
+
+.popoutWrapper div.ClientDocument div.summaryBar .summaryBarType {
+    padding-left: 5px;
+    padding-top: 3px;
+}
+
+.popoutWrapper div.ClientDocument div.summaryBar .summaryBarSize {
+    float: left;
+    padding-left: 3px;
+    padding-top: 3px;
+}
+
+.popoutWrapper div.ClientDocument div.summaryBar .summaryBarSize.hide {
+    display: none;
+}
+
+.popoutWrapper div.ClientDocument div.summaryBarIcon{
+    display: inline;
+    height: 19px;
+    margin-top: 3px; /*Add a 3px margin-top to align icons correctly*/
+}
+
+.popoutWrapper div.ClientDocument div.summaryBarContainer{
+    display: inline;
+    float: none;
+}
+
+.popoutWrapper div.ClientDocument div.summaryBar{
+    padding-left: 0px;
+}
+
+/* Unsupported View CSS */
+.popoutWrapper div.ClientDocument .ClientViewDiv .UnknownViewerTextArea textarea{
+    box-sizing: border-box;
+    border-top: 1px solid var(--mw-borderColor-secondary);
+    cursor: default;
+}
+
+.popoutWrapper div.ClientDocument .ClientViewDiv .UnknownViewerTextArea.mwTextArea{
+    display: inline;
+    border: none;
+    box-shadow: none;
+}
+</style><style>.ClientDocument .ClientViewDiv {
+    --ve-search-highlight-color: var(--mw-backgroundColor-searchHighlight-secondary, var(--mw-color-yellow200, #FFF5BC));
+    --ve-search-focus-color: var(--mw-backgroundColor-searchHighlight, var(--mw-color-yellow500, #FFD60A));
+}
+
+</style><style>
+</style><style>/* This file should only have 1-p css dependencies as well as export.css
+ * Note: We do not have tooling to copy transitive CSS yet, this file is to be used by other downstream components.
+ */</style><style>/* styles for scrollbars during touch-scroll */
+
+.touchscroll-x, .touchscroll-y {
+	display: none; /* overridden below */
+	overflow: hidden; /* cut off ends of scrollbar during rubber-banding */
+	position: absolute;
+	/* establish base style for scrollbar fade-in/out */
+	opacity: 0.7;
+}
+.touchscroll-fadeout .touchscroll-x, .touchscroll-fadeout .touchscroll-y {
+	opacity: 0;
+	-webkit-transition: opacity 0.3s ease-out 0.1s;
+	-moz-transition: opacity 0.3s ease-out 0.1s;
+	-o-transition: opacity 0.3s ease-out 0.1s;
+	transition: opacity 0.3s ease-out 0.1s;
+}
+
+.touchscroll-bar {
+	background-color: rgba(88,88,88,0.97);
+	border: 1px solid rgba(88,88,88,1);
+	border-radius: 3px;
+	
+	/* the borders aren't anti-aliased on Android, so this smooths it out a bit */
+	-webkit-box-shadow: 0 0 1px rgba(88,88,88,0.4);
+}
+
+.touchscroll-x {
+	left: 1px;
+	right: 3px;
+	bottom: 1px;
+	height: 5px;
+}
+.touchscroll-y {
+	top: 1px;
+	bottom: 3px;
+	right: 1px;
+	width: 5px;
+}
+
+.touchscroll-scrollable-x .touchscroll-x, .touchscroll-scrollable-y .touchscroll-y {
+	display: block; /* display scrollbar when appropriate */
+}
+
+.touchscroll-bar {
+	/* Establish transition property and timing function for scrollbars */
+	-webkit-transition: transform cubic-bezier(0.33, 0.66, 0.66, 1);
+	-moz-transition: transform cubic-bezier(0.33, 0.66, 0.66, 1);
+	-o-transition: transform cubic-bezier(0.33, 0.66, 0.66, 1);
+	transition: transform cubic-bezier(0.33, 0.66, 0.66, 1);
+}
+
+/* indicator of a successful load */
+#dgrid-css-TouchScroll-loaded {
+	display: none;
+}</style><style>/* This stylesheet provides the structural CSS for the dgrid */
+.dgrid {
+	position: relative;
+	overflow: hidden; /* This is needed by IE to prevent crazy scrollbar flashing */
+	border: 1px solid #ddd;
+	height: 30em;
+	display: block;
+}
+
+.dgrid-header {
+	background-color: #eee;
+}
+
+.dgrid-header-row {
+	position: absolute;
+	right: 17px; /* scrollbar width; revised in List.js if necessary */
+	left: 0;
+}
+
+.dgrid-header-scroll {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.dgrid-footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.dgrid-header-hidden,
+html.has-quirks .dgrid-header-hidden .dgrid-cell {
+	/*
+		Used to "hide" header, without losing size information for reference.
+		!important is used to supersede theme styles at higher specificity.
+		Left/right box styles are untouched, as they may influence width of
+		.dgrid-content as updated in Grid's resize method.
+		Note: Still not quite perfect in IE Quirks mode (1px left over).
+	*/
+	font-size: 0; /* allow shrinkage in IE Quirks mode for Lists */
+	height: 0 !important;
+	border-top: none !important;
+	border-bottom: none !important;
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.dgrid-footer-hidden {
+	/* Hiding footer is much simpler; simply set its display to none. */
+	display: none;
+}
+
+.dgrid-sortable {
+	cursor: pointer;
+}
+.dgrid-header, .dgrid-header-row, .dgrid-footer {
+	overflow: hidden;
+	background-color: #eee;
+}
+
+.dgrid-row-table {
+	border-collapse: collapse;
+	border: none;
+	table-layout: fixed;
+	empty-cells: show;
+	width: 100%; /* this becomes 'auto' for IE7 (non-quirks) */
+	height: 100%;
+}
+.dgrid-cell {
+	padding: 0px;
+	text-align: left;
+	overflow: hidden;
+	vertical-align: top;
+	border: 1px solid #ddd;
+	border-top-style: none;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.dgrid-cell-padding {
+	padding: 3px;
+}
+
+.dgrid-content {
+	position: relative;
+	height: 99%;
+}
+
+.dgrid-scroller {
+	overflow-x: auto;
+	overflow-y: scroll;
+	position: absolute;
+	top: 0px;
+	margin-top: 25px; /* this will be adjusted programmatically to fit below the header*/
+	bottom: 0px;
+	width: 100%;
+}
+
+.dgrid-preload {
+	/* Force IE6 to honor 0 height */
+	font-size: 0;
+	line-height: 0;
+}
+
+.dgrid-loading {
+	position: relative;
+	height: 100%;
+}
+.dgrid-above {
+	position: absolute;
+	bottom: 0;
+}
+
+.ui-icon {
+	width: 16px;
+	height: 16px;
+	background-image: url(release/images/ui-icons_222222_256x240-ebe6b6902a408fbf9cac6379a1477525.png);
+}
+
+.ui-icon-triangle-1-e {
+	background-position: -32px -16px;
+}
+.ui-icon-triangle-1-se {
+	background-position: -48px -16px;
+}
+
+.dgrid-expando-icon {
+	width: 16px;
+	height: 16px;
+}
+.dgrid-tree-container {
+	-webkit-transition-duration: 0.3s;
+	-moz-transition-duration: 0.3s;
+	-ms-transition-duration: 0.3s;
+	-o-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	overflow: hidden;
+}
+.dgrid-tree-container.dgrid-tree-resetting {
+	-webkit-transition-duration: 0;
+	-moz-transition-duration: 0;
+	-ms-transition-duration: 0;
+	-o-transition-duration: 0;
+	transition-duration: 0;
+}
+
+/* Single Sort */
+.dgrid-sort-arrow {
+	background-position: -64px -16px;
+	display: block;
+	float: right;
+	margin: 0 4px 0 5px;
+	height: 12px;
+}
+.dgrid-sort-up .dgrid-sort-arrow {
+	background-position: 0px -16px;
+}
+
+/* selection*/
+.dgrid-selected {
+	background-color: #bfd6eb;
+}
+
+.dgrid-input {
+	width: 99%;
+}
+
+/* UA-specific hacks*/
+html.has-mozilla .dgrid *:focus, html.has-opera .dgrid *:focus {
+	/* firefox's focus doesn't work by default for divs prior to actually tabbing into it. This fixes that
+	(we don't do any other browsers because we are trying to stay as close to native as possible) */ 
+	outline: 1px dotted;
+}
+html.has-ie-6-7.has-no-quirks .dgrid-row-table {
+	/* in IE7 this is needed instead of 100% to make it not create a horizontal scroll bar*/
+	width: auto;
+}
+html.has-quirks .dgrid-row-table, html.has-ie-6 .dgrid-row-table {
+	/* similar story, height looks too high */
+	height: auto; 
+}
+
+html.has-quirks .dgrid-header-scroll,
+html.has-ie-6 .dgrid-header-scroll {
+	/* ensure that header scroll node can shrink to 0 height in IE6 & quirks */
+	font-size: 0;
+}
+
+html.has-mozilla .dgrid-focus {
+	/* fix row focus outline (prevents horizontal scroll in FF 3.6) */
+	outline-offset: -1px;
+}
+
+/* will be used to calculate the width of the scrollbar */
+.dgrid-scrollbar-measure {
+	width: 100px;
+	height: 100px;
+	overflow: scroll;
+	position: absolute;
+	top: -9999px;
+}
+
+/* Styles for auto-height grids; simply add the dgrid-autoheight class */
+.dgrid-autoheight {
+	height: auto;
+}
+.dgrid-autoheight .dgrid-scroller {
+	position: relative;
+	overflow-y: hidden;
+}
+.dgrid-autoheight .dgrid-header-scroll {
+	display: none;
+}
+.dgrid-autoheight .dgrid-header {
+	right: 0;
+}
+
+/* indicator of a successful load */
+#dgrid-css-dgrid-loaded {
+	display: none;
+}</style><style>.datePickerRichEditor .EmbeddedDatePickerRichEditor .propertySheet .propertySetOuterContainer > .properties {
+    padding-right: 0;
+    padding-top:  0;
+}
+
+.datePickerRichEditor .EmbeddedDatePickerRichEditor .propertySheet .propertySetOuterContainer > .properties .propertySet .propertyName{
+    width:20%;
+}
+
+.datePickerRichEditor .EmbeddedDatePickerRichEditor .propertySheet .propertySetOuterContainer > .properties .propertySet .propertyValue{
+    width:80%;
+}
+
+.dataTipsRichEditor .EmbeddedDataTipsRichEditor .propertySheet .propertySetOuterContainer > .properties {
+    padding-right: 0;
+    padding-top:  0;
+}
+
+.dataTipsRichEditor .EmbeddedDataTipsRichEditor .propertySheet .propertySetOuterContainer > .properties .propertySet .propertyName{
+    width:20%;
+}
+
+.dataTipsRichEditor .EmbeddedDataTipsRichEditor .propertySheet .propertySetOuterContainer > .properties .propertySet .propertyValue{
+    width:80%;
+}
+
+.propertyFieldsEditor .propertySheet .propertySetOuterContainer > .properties .propertySet .propertyName{
+    width: 50%;
+}
+
+.propertyFieldsEditor .propertySheet .propertySetOuterContainer > .properties .propertySet .propertyValue{
+    width: 50%;
+}
+
+.propertyFieldsEditor .PropertyFieldsEditorValidation {
+    color: var(--mw-color-error);
+    padding-top: 5px;
+}
+
+
+</style><style>.dijitComboBox .dijitButtonNode.dijitArrowButton.dijitDownArrowButton {
+    background: transparent;
+}
+
+/*Without this, mouse events like click are not received in comboBox when Down Arrow is clicked*/
+.dijitComboBox .dijitButtonNode.dijitArrowButton.dijitDownArrowButton input.dijitInputField.dijitArrowButtonInner {
+    -moz-user-input: enabled;
+    cursor: default;
+}
+
+/* Changing the default high-lighting for comboBoxes to match the rest of the selection colors */
+.dijitComboBoxMenuPopup .veComboBoxDropDown.dijitComboBoxMenu .dijitMenuItem.dijitMenuItemHover {
+    background: var(--mw-backgroundColor-selectedFocus);
+    color: var(--mw-color-primary);
+}
+
+/* Changing the default selection text color for textboxes within ComboBoxes to standardize all widgets*/
+.cell.dijitTextBox.dijitComboBox .dijitInputField .dijitInputInner::selection {
+    background: var(--mw-backgroundColor-selectedFocus);
+    color: var(--mw-color-primary);
+}
+
+.dijitComboBox.dijitValidationTextBox.vecombobox .dijitInputInner {
+    height: 100%;
+    text-overflow: ellipsis;
+    /* add ellipsis to the inner textbox as the outer one also includes the dropdown arrow*/
+    padding-left: 0px !important;
+    padding-top: 0px !important;
+}
+
+.vecombobox.dijitComboBox {
+    height: 22px;
+    width: 100%;
+    background-color: var(--mw-backgroundColor-input);
+    border: 1px solid var(--mw-borderColor-primary);
+    box-sizing: border-box;
+    overflow: hidden;
+    vertical-align: top;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.vecombobox.dijitComboBox .dijitButtonNode.dijitArrowButton.dijitDownArrowButton {
+    border-left: 1px solid var(--mw-borderColor-primary);
+    background: var(--mw-backgroundColor-primary);
+    color: var(--mw-color-primary) !important;
+    height: 100%;
+    border-radius: 0;
+    cursor: default;
+}
+
+/* Temporary fix to make sure the dropdown icon in combobox is visible in dark mode
+Currently, we are using dijit combo-box that uses a PNG icon for the arrow drop-down,
+this does not change color in dark mode. Hence adding an invert
+TODO: Remove this once we start using mw-combo-box */
+.mw-theme-dark .vecombobox.dijitComboBox .dijitButtonNode.dijitArrowButton.dijitDownArrowButton .dijitArrowButtonInner {
+    filter: invert(100%);
+}
+
+.vecombobox.dijitComboBox .dijitInputField {
+    box-sizing: border-box;
+    height: 100% !important;
+    padding: 2px 3px 2px 3px;
+    border-radius: 5px;
+}
+
+.dijitMenu.dijitComboBoxMenu.variableEditorRenderers .dijitMenuItem {
+    background: var(--mw-backgroundColor-primary);
+    color: var(--mw-color-primary);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: default;
+}
+
+.variableEditorRenderers.dijitTextBoxReadOnly {
+    background-color: var(--mw-backgroundColor-input);
+    /* background: var(--mw-backgroundColor-primary); */
+    color: var(--mw-color-primary);
+}
+
+.variableEditorRenderers.dijitComboBoxReadOnly.venoteditable {
+    opacity: 0.35;
+}</style><style>/*This css file is used for the breadcrumbs widget*/
+/** @copyright Copyright 2018-2023 The MathWorks, Inc.*/
+
+/* Placeholder of the breadcrumbs widget in the Object Browser
+*/
+.breadcrumbsplaceholder {
+    height: fit-content;
+    background: var(--mw-backgroundColor-secondary);
+    padding-top: 2px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+    margin-left: -1px;
+}
+
+.breadCrumbsInspector {
+    background: var(--mw-backgroundColor-secondary);
+}
+
+/*
+Get rid of the <-- --> navigation buttons in the widget
+*/
+.breadcrumbsplaceholder .breadCrumbsInspector .actionToolbarContainerNode {
+    display: none;
+}
+
+.breadcrumbsplaceholder .breadCrumbsInspector .locationNodeWithIcon .iconParentDiv {
+    display: table-column;
+}
+
+/*
+Match the Inspector background color for the buttons
+*/
+.breadcrumbsplaceholder .breadCrumbsInspector .navigationBarContainer .navigationBarNode .currentLocationNode .breadCrumbsParentNode .mwDefaultVisualFamily.mwSplitButton{
+    background: var(--mw-backgroundColor-secondary);
+    border: var(--mw-backgroundColor-secondary);
+    margin-right: 12px;
+    overflow: visible;
+    height: 18px !important;
+}
+
+.breadcrumbsplaceholder .breadCrumbsInspector .breadcrumbBarContainer .navigationBarContainer .mwButtonNode {
+    border-radius: 5px;
+}
+
+/* Get rid of the border*/
+
+.breadcrumbsplaceholder .breadCrumbsInspector .breadcrumbBarContainer .breadcrumbBar .navigationBarNode {
+    border: none;
+    background: transparent;
+}
+
+/*Match the Inspector background color */
+.breadcrumbsplaceholder .breadCrumbsInspector .navigationBarContainer .navigationBarNode .locationNodeWithIcon {
+    background-color: var(--mw-backgroundColor-secondary);
+    padding-top: 1px;
+    height: auto;
+}
+
+.breadcrumbsplaceholder .breadCrumbsInspector .navigationBarContainer .navigationBarNode .currentLocationNode .breadCrumbsParentNode .mwFocusNode{
+    display: inline-grid !important;
+}
+
+.propertyInspector .breadcrumbsplaceholder .breadCrumbsInspector .navigationBarContainer .navigationBarNode .currentLocationNode .breadCrumbsParentNode .mwFocusNode {
+    /* Use this color only when the breadcrumbs display is part of the Property Inspector */
+     background-color: var(--mw-backgroundColor-secondary);
+ }
+
+.breadCrumbsInspector .breadCrumbsParentNode {
+    display: flex;
+}
+
+.breadcrumbsplaceholder .breadCrumbsInspector .navigationBarContainer .navigationBarNode .currentLocationNode .breadCrumbsParentNode .mwDefaultVisualFamily.mwSplitButton:hover {
+    box-shadow: 0 0 0 0 var(--mw-backgroundColor-primary) !important;
+    border-radius: 5px;
+    background-color: var(--mw-backgroundColor-primary);
+}
+
+.breadcrumbsplaceholder .breadCrumbsInspector .navigationBarContainer .navigationBarNode .currentLocationNode .breadCrumbsParentNode .mwWidget.mwDefaultVisualFamily.mwSplitButton .mwButtonNode:hover{
+    background-color: var(--mw-backgroundColor-hover);
+    box-shadow: none;
+    border-radius:5px;
+}
+
+.breadcrumbsplaceholder .breadCrumbsInspector .navigationBarContainer .navigationBarNode .currentLocationNode .breadCrumbsParentNode .mwWidget.mwDefaultVisualFamily.mwSplitButton .mwButtonNode:active{
+    background-color: var(--mw-backgroundColor-secondary);
+    box-shadow: none;
+}
+
+.breadcrumbsplaceholder .breadCrumbsInspector .navigationBarContainer .navigationBarNode .currentLocationNode .breadCrumbsParentNode .mwWidget.mwDefaultVisualFamily.mwSplitButton .mwButtonNode{
+    height: 14px !important;
+}
+
+.propertyInspector .breadcrumbsplaceholder .breadCrumbsInspector .navigationBarContainer .navigationBarNode .currentLocationNode .breadCrumbsParentNode .mwWidget.mwDefaultVisualFamily.mwSplitButton .mwButtonNode {
+    /* Use this color only when the breadcrumbs display is part of the Property Inspector */
+    border: 1px solid var(--mw-backgroundColor-secondary) !important;
+}
+
+.breadcrumbsplaceholder .breadCrumbsInspector .navigationBarContainer .navigationBarNode .currentLocationNode .breadCrumbsParentNode .mwWidget.mwDefaultVisualFamily.mwSplitButton .mwButtonNode:focus {
+    border: 1px solid var(--mw-borderColor-focus) !important;
+}
+
+.breadCrumbsInspector .breadCrumbsParentNode .mwSplitButton .mwArrowIconNode {
+    margin-top: -5px;
+}
+
+.breadCrumbsInspector .navigationBarNode .currentLocationNode .breadCrumbsParentNode .mwDefaultVisualFamily.mwSplitButton:hover .breadCrumbDropDownNode {
+    border-left: 1px solid var(--mw-backgroundColor-secondary) !important;
+}
+</style><style>.ignoreSelection {
+    background: var(--mw-backgroundColor-secondary);
+}
+
+.objectbrowsercontainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.objectbrowsercontainer .treebrowserplaceholder {
+    height: inherit;
+    width: 100%;
+    margin-top: 3px;
+    overflow: hidden;
+}
+
+.objectbrowsercontainer .treebrowserplaceholder .mw-tree .tree>.parentNode:first-child>.treeNodeData .disclosureImage {
+    cursor: pointer;
+}
+
+
+.visibleNode {
+    display: block;
+
+}
+
+.invisibleNode {
+    display: none;
+}
+
+.objectbrowsercontainer .treebrowserplaceholder .mw-tree .treeNode .treeNodeData .treeNodeText {
+    text-shadow: none;
+}
+
+
+.objectbrowsercontainer .ignoreSelection {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.objectbrowsercontainer .treebrowserplaceholder .greyedNode {
+    color: var(--mw-color-primary);
+}
+
+
+.objectbrowsercontainer .treebrowserplaceholder .mw-tree .mw-tree-scroll-component.focused .treeNode.focused:not([data-edit-mode]) {
+    /*JxBrowser problem keeps the border after changing focus*/
+    border: 1px solid transparent;
+}
+
+.toggleImage {
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    height: 7px;
+    width: 7px;
+    min-height: 7px;
+    min-width: 7px;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 1px;
+    border: 1px solid transparent;
+}
+
+.toggleImage:focus {
+    border: 1px solid var(--mw-borderColor-focus)
+}
+
+.collpasedImage:focus {
+    border: 1px solid var(--mw-borderColor-focus)
+}
+
+.objectbrowsercontainer .treeContainerNode {
+    height: inherit;
+}</style><style>.dataTipsEditor {
+    /* The label in datatips editor uses a blue color, reusing the variableMetaData semantic variable for this
+    TODO: Update this once a new variable is created */
+    --mw-color-dataTipsLabel: var(--mw-color-variableMetadata);
+}
+
+.dataTipsEditor {
+    display: inline-block;
+    white-space: nowrap;
+    width: 100%;
+    min-height: 43px;
+}
+
+.dataTipsEditor.readOnly {
+    opacity: 0.5;
+    user-select: none !important;
+    pointer-events: none !important;
+}
+
+.dataTipsEditor .dataTipsListDiv .dataTipsTextBoxEditor {
+    width: 100%;
+    margin-right: 3px;
+}
+
+.dataTipsEditor .dataTipsTextBoxEditor .dataTipsValue input {
+    height: 22px;
+}
+
+.dataTipsEditor .dataTipsListDiv {
+    max-height: 300px;
+    padding: 0 4px 0 2px;
+    overflow: auto;
+}
+
+.dataTipsEditor .dataTipsRichEditor {
+    position: relative;
+    z-index: 2;
+    border-width: 1.5px;
+    border-style: solid;
+    height: 0;
+    border-color: var(--mw-borderColor-secondary);
+    visibility: hidden;
+}
+
+.dataTipsEditor .dataTipsRichEditor .vecombobox.dijitComboBox.errorState {
+    border-color: var(--mw-borderColor-error);
+}
+
+
+.dataTipsEditor .dataTipsRichEditor .propertySheet .propertySetOuterContainer>.properties .propertySet {
+    width: calc(100% - 5px) !important;
+}
+
+.dataTipsEditor .dataTipsRichEditor .propertySheet .propertySetOuterContainer>.properties .propertySet .propertyName {
+    padding-left: 5px !important;
+    width: 25%;
+}
+
+
+.dataTipsEditor .dataTipsRichEditor.show {
+    visibility: visible;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    /* margin-top: -62px;*/
+    height: 100%;
+    width: 100%;
+}
+
+.dataTipsEditor .dataTipsRichEditor.hide {
+    visibility: hidden;
+}
+
+.dataTipsEditor .dataTipsListDiv .dataTipsList {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    display: inline-block;
+    overflow: visible;
+    pointer-events: none;
+    width: 100%;
+}
+
+.dataTipsEditor .dataTipsListDiv .dataTipsList .dataTipsListItem {
+    margin: 0px;
+    padding: 0 4px 2px 0;
+    border: 0px;
+    border-bottom: 1px solid var(--mw-borderColor-secondary);
+    box-sizing: border-box;
+    width: 100%;
+    pointer-events: none;
+}
+
+.dataTipsEditor .dataTipsListDiv .dataTipsList .dataTipsListItem.dojoDndItemBefore {
+    border-top: 1px solid var(--mw-borderColor-primary);
+}
+
+.dataTipsEditor .dataTipsListDiv .dataTipsList .dataTipsListItem.dojoDndItemAfter {
+    border-bottom: 1px solid var(--mw-borderColor-primary);
+}
+
+.dataTipsEditor .dataTipsListDiv .dataTipsList .dataTipsListItem .dataTipsDragHandle {
+    color: transparent;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: middle;
+    pointer-events: all;
+}
+
+.dataTipsEditor.readOnly .dataTipsListDiv .dataTipsList .dataTipsListItem .dataTipsDragHandle {
+    pointer-events: none;
+}
+
+.dataTipsEditor.readOnly .dataTipsListDiv .dataTipsList .dataTipsListItem .dataTipsRowDiv {
+    pointer-events: none;
+}
+
+.dataTipsEditor .dataTipsListDiv .dataTipsList .dataTipsListItem .dataTipsRowDiv {
+    width: 100%;
+    pointer-events: visible;
+}
+
+.dataTipsEditor .dataTipsListDiv .dataTipsList .dataTipsListItem .dataTipsRowDiv .dataTipsRowLabel {
+    text-overflow: ellipsis;
+    max-width: 90px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.dataTipsEditor .dataTipsListDiv .dataTipsList .dataTipsListItem .dataTipsRowDiv .dataTipsRowValue {
+    color: var(--mw-color-dataTipsLabel);
+    font-weight: bold;
+    float: right;
+    margin-right: 10px;
+    max-width: calc(100% - 100px);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-left: -10px;
+}
+
+.dataTipsEditor .dataTipsListDiv .dataTipsList .dataTipsListItem .dataTipsRowDiv .dataTipsRowValue.errorStateValue {
+    color: var(--mw-color-error);
+}
+
+.dataTipsEditor .dataTipsListDiv .dataTipsList .dataTipsListItem .dataTipsEditor {
+    display: inline-block;
+    white-space: nowrap;
+    width: 90%;
+    vertical-align: top;
+    pointer-events: all;
+}
+
+.dataTipsEditor.macScrollBarWidth .dataTipsListDiv .dataTipsList .dataTipsListItem .dataTipsEditor {
+    width: 82%;
+}
+
+.dataTipsEditor.macScrollBarWidth .dataTipsListDiv .dataTipsList .dataTipsListItem .dataTipsEditor .dataTipsTextBoxEditor.macScrollBarWidth {
+    width: 90%;
+}
+
+.dataTipsEditor .dataTipsListDiv .dataTipsList .dataTipsListItem .dataTipsDeleteDiv {
+    background-position: 4%;
+    background-repeat: no-repeat;
+    color: transparent;
+    background-color: transparent;
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: middle;
+    pointer-events: all;
+    margin-left: 5px;
+}
+
+.dataTipsEditor.readOnly .dataTipsListDiv .dataTipsList .dataTipsListItem .dataTipsDeleteDiv {
+    pointer-events: none;
+}
+
+.dataTipsEditor.dataTipsListItemAvatar.dojoDndItem {
+    height: 22px;
+    background-color: var(--mw-backgroundColor-primary);
+}
+
+.dataTipsEditor .dataTipsListDiv .dataTipsList .dataTipsListItem .dataTipsDeleteDiv:hover {
+    background: var(--mw-backgroundColor-hover);
+    border-color: var(--mw-borderColor-hover);
+    background-size: 12px;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+}
+
+.dataTipsEditor .buttonPanel {
+    text-align: right;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+}
+
+.dataTipsEditor .dataTipsAddButton {
+    height: 20px;
+    padding: 1px 8px;
+    border: 1px solid;
+    border-color: var(--mw-borderColor-primary);
+    text-align: center;
+    font-size: 11px;
+    color: var(--mw-color-primary);
+    border-radius: 3px;
+    background: var(--mw-backgroundColor-primary);
+}
+
+.dataTipsEditor .dataTipsAddButton:hover {
+    background: var(--mw-backgroundColor-hover);
+    border-color: var(--mw-borderColor-hover);
+}
+
+.dataTipsEditor .dataTipsAddButton:active {
+    background: var(--mw-backgroundColor-active);
+    border-color: var(--mw-borderColor-focus);
+}
+
+.dataTipsEditor .dataTipsAddButton:focus {
+    outline: 0;
+}
+
+.dataTipsEditor .dataTipsList.container li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.dataTipsEditor .rgbDataTipsEditor {
+    width: 100%;
+}
+
+
+.dataTipsEditor .dataTipsCustomComboBox.errorState {
+    border-color: var(--mw-borderColor-error);
+}</style><style>.propertyInspector .maincontainer {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    background-color: var(--mw-backgroundColor-primary);
+    position: relative;
+}
+
+.propertyInspector .maincontainer .topcontainer {
+    overflow: hidden;
+    top: 30px;
+}
+
+.propertyInspector .maincontainer .bottomcontainer {
+    padding: 0px;
+    width: 100% !important;
+}
+
+.propertyInspector .tundra .dijitSplitContainer-dijitContentPane,
+.tundra .dijitBorderContainer-dijitContentPane {
+    background-color: var(--mw-backgroundColor-primary);
+}</style><style>/* This must include inspector component's css alone*/
+
+.dijitTooltipDialog .propertySheet {
+    background: transparent;
+}
+
+.inspector.widgetContainer {
+    height: auto;
+    background: var(--mw-backgroundColor-primary);
+    /*
+    /*
+    * Prevent user selection of text
+    */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.main-container .inspector.widgetContainer {
+    height: 100%;
+}
+
+.inspector.outerContainer {
+    height: calc(100% - 31px);
+    /*
+    * Put it here again because some place use the no-toobar version such as InspectorShowcase.html.
+    */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.propertySheet {
+    height: 100%;
+    font-size: 11px;
+    color: var(--mw-color-primary);
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--mw-backgroundColor-primary);
+}
+
+.propertySheet .dijitTitlePaneTitleFocus {
+    font-size: 0;
+}
+
+.propertySheet .dijitTitlePane .dijitArrowNode {
+    margin-bottom: 1px;
+}
+
+.mw-theme-dark .propertySheet .dijitTitlePane .dijitArrowNode {
+    filter: invert(100%);
+}
+
+.propertySheet .dijitTitlePaneContentInner,
+.propertySheet .dijitTitlePaneContentOuter,
+.propertySheet .dijitTitlePaneTitle {
+    font-size: 10px;
+    padding: 0;
+    border: none;
+    white-space: inherit;
+}
+
+.propertySheet .InspectorTitle .dijitTitlePaneContentInner {
+    padding: 0px;
+}
+
+.propertySheet .dijitTitlePaneContentInner .dijitTitlePaneTextNode,
+.propertySheet .dijitTitlePaneContentOuter .dijitTitlePaneTextNode,
+.propertySheet .dijitTitlePaneTitle .dijitTitlePaneTextNode {
+    font-size: 10px;
+}
+
+.propertySheet .dijitTitlePaneContentInner {
+    background-color: var(--mw-backgroundColor-primary);
+    background: var(--mw-backgroundColor-primary);
+}
+
+.propertySheet .dijitTitlePaneTitle {
+    text-transform: uppercase;
+    background: var(--mw-backgroundColor-secondary);
+    border: none;
+    border-top: 1px solid var(--mw-borderColor-secondary);
+    border-bottom: 1px solid var(--mw-borderColor-secondary);
+    height: 24px;
+    line-height: 24px;
+    padding-left: 10px;
+}
+
+.propertySheet .dijitTitlePane {
+    width: auto !important;
+    height: auto !important;
+}
+
+.propertySheet .propertySetOuterContainer {
+    box-sizing: border-box;
+    width: 100%;
+    height: inherit;
+    overflow: auto;
+
+    /* use flex to make direct children in the same line*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.propertySheet .propertySetOuterContainer>.properties {
+    width: 100%;
+}
+
+.propertySheet .propertySetOuterContainer>.properties .propertySet {
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    margin-top: 3px;
+    min-height: 22px;
+
+    /* give 15px space for kabab button.(babab button width is 10px, border is 1px, distance between left is 3px)
+     *  15 = 10 + 1x2 + 3
+     */
+    width: calc(100% - 15px);
+}
+
+.propertySheet .propertyGroup>.propertySetOuterContainer .propertySetContainer .propertySet {
+    /* for property set in the propertySetContainer, the width has already been taken care of. */
+    width: auto;
+}
+
+.propertySheet .propertySetOuterContainer>.properties .propertySet:first-child {
+    margin-top: 0;
+}
+
+.propertySheet .propertySetOuterContainer>.properties .propertySet .propertyName {
+    padding-left: 10px;
+    width: 135px;
+    height: 22px;
+    line-height: 22px;
+    white-space: pre;
+    cursor: default;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.propertySheet .propertySetOuterContainer>.properties .propertySet .propertyValue {
+    height: 100%;
+    width: calc(100% - 145px);
+}
+
+.propertySheet .propertySetOuterContainer>.properties .propertySet .propertyValue>.cellRenderer {
+    display: flex;
+}
+
+.propertySheet .propertySetOuterContainer>.properties .propertySet .propertyValue>.cellRenderer.focused .vecombobox.dijitComboBox {
+    border: 1px solid var(--mw-borderColor-focus);
+}
+
+.propertySheet .propertySetOuterContainer>.properties .propertySet .propertyValue>.cellRenderer.focused .mwTextField input {
+    border: 1px solid var(--mw-borderColor-focus);
+}
+
+.propertySheet .propertySetOuterContainer>.properties .propertySet .propertyValue>.cellRenderer .mwTextField {
+    padding-left: 0;
+    padding-right: 0;
+    height: 22px;
+    border: none;
+    width: 100%;
+}
+
+.propertySheet .propertySetOuterContainer>.properties .propertySet .propertyValue>.cellRenderer .mwTextField.mwNonEditable {
+    opacity: 0.35;
+}
+
+.propertySheet .propertySetOuterContainer>.properties .propertySet .propertyValue>.cellRenderer .mwTextField input {
+    border: solid 1px var(--mw-borderColor-primary);
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 11px;
+}
+
+.propertySheet .propertySetOuterContainer>.properties .propertySet .propertyValue>.cellRenderer .mwTextField.mwNonEditable input {
+    border: solid 1px var(--mw-borderColor-primary);
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 11px;
+    cursor: default;
+
+    /* Prevent user selection of disabled text */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.propertySheet.propertySheet-noGroupEditor .propertyGroup>.propertySetOuterContainer {
+    padding-right: 0px;
+    overflow: hidden;
+}
+
+/* reserve 17px space for the scrollbar in a-z view. */
+.propertySheet.noGroup>.propertySetOuterContainer>.properties {
+    padding-top: 5px;
+}
+
+.propertySheet.noGroup .propertySetOuterContainer .propertyEditorGroup {
+    padding-top: 3px;
+    padding-bottom: inherit;
+}
+
+.propertySheet .propertyGroup {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    margin-top: 3px;
+}
+
+.propertySheet.noGroup .propertyGroup {
+    margin-top: 0px;
+}
+
+.propertySheet .propertyGroup .propertyGroup {
+    padding: 0;
+}
+
+.propertySheet .propertyGroup>.propertySetOuterContainer {
+    padding-right: 5px;
+}
+
+.propertySheet .propertyGroup>.propertySetOuterContainer .propertySetContainer {
+    /* give 15px space for kabab button.(babab button width is 10px, border is 1px, distance between left is 3px)
+     *  15 = 10 + 1x2 + 3
+     */
+    width: calc(100% - 15px);
+}
+
+.propertySheet .propertyGroup:first-child {
+    margin-top: 0px;
+}
+
+.propertySheet .propertyGroup.propertySubGroup>.propertySetOuterContainer {
+    padding-right: 0px;
+    overflow: visible;
+}
+
+.propertySheet .propertyGroup.propertyEditorGroup>.propertySetOuterContainer {
+    padding-right: 0px;
+    padding-top: 0px;
+}
+
+.propertySheet .propertyGroup.propertySubGroup .property-more {
+    background: transparent;
+    height: 12px !important;
+    width: calc(100% - 18px) !important;
+    margin-left: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px var(--mw-borderColor-secondary);
+}
+
+.propertySheet .propertyGroup.propertySubGroup.propertySubGroup-expanded .property-more {
+    margin-top: 3px;
+}
+
+.propertySheet .propertyGroup.propertyEditorGroup {
+    display: flex;
+}
+
+.propertySheet .propertyGroup.propertyEditorGroup .propertyGroupEditor {
+    display: flex;
+    top: 0;
+}
+
+.propertySheet .propertyGroup.propertyEditorGroup .propertyGroupEditor .mwDropDownButton {
+    box-sizing: content-box;
+    border-radius: 3px;
+    margin-left: 3px;
+}
+
+.propertySheet .propertyGroup.propertyEditorGroup .propertyGroupEditor .mwDropDownButton .mwButtonNode {
+    padding: 0;
+}
+
+.propertySheet .propertyGroup.propertyEditorGroup .propertyGroupEditor .mwDropDownButton .mwButtonNode .mwButtonContainerNode,
+.propertySheet .propertyGroup.propertyEditorGroup .propertyGroupEditor .mwDropDownButton .mwButtonNode .mwButtonContainerNode .mwIconNode {
+    width: 100%;
+    height: 100%;
+}
+
+.propertySheet .propertyGroup.propertyEditorGroup .propertyGroupEditor .mwDropDownButton .mwButtonNode .mwButtonContainerNode .mwIconNode {
+    position: absolute;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.propertySheet .propertyGroup.propertyEditorGroup .propertyGroupEditor .mwDropDownButton .mwButtonNode .mwButtonContainerNode .mwIconNode .richeditor-dot {
+    width: 2px;
+    height: 2px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+    background-color: var(--mw-color-primary);
+}
+
+/*g1625222 add style for colorDropDownEditor in inspector*/
+.propertySheet .rgbColorEditor .colorDropDownEditor .mwDropDownButton .mwFocusNode .mwButtonNode {
+    display: flex;
+    padding: 0px;
+}
+
+
+
+/* style for search bar begins*/
+.searchResultHighlight {
+    background: var(--mw-backgroundColor-searchHighlight);
+    white-space: pre;
+    align-self: center;
+    line-height: 1.5;
+}
+
+.notASearchResult {
+    display: none !important;
+}
+
+.searchMatchesLabel.afterDirectMatches {
+    margin-top: 22px;
+}
+
+.helpDocMatchesLabel {
+    font-weight: bold;
+}
+
+.searchMatchesLabel {
+    padding-left: 10px;
+    display: flex;
+    align-items: flex-start;
+    height: 22px;
+    line-height: 22px;
+}
+
+.ToolbarContainer {
+    display: flex;
+    align-items: stretch;
+    padding: 3px 5px 3px 5px;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    background-color: var(--mw-backgroundColor-primary);
+}
+
+.ToolbarContainer.ToolbarHidden {
+    display: none;
+}
+
+.ToolbarContainer>.SearchContainer {
+    flex: 1 1 auto;
+    margin-right: 5px !important;
+    margin-left: 1px !important;
+}
+
+.ToolbarContainer>* {
+    margin: 0 3px;
+}
+
+.SearchContainer .SearchTextField {
+    display: flex;
+    align-items: stretch;
+    width: 100% !important;
+    padding-right: 0;
+}
+
+.SearchContainer .ClearTextButton {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+}
+
+.SearchContainer .SearchTextField .mwInputNode,
+.SearchContainer .SearchTextField .mwPlaceholderNode {
+    /* Move the input node so it is not under clear text button */
+    padding-right: 16px !important;
+}
+
+.RefreshIcon {
+    height: 16px;
+}
+
+.ToolbarRefreshButton {
+    width: 0px;
+    visibility: hidden;
+    display: none;
+    height: 16px;
+}
+
+.ToolbarRefreshButton.showRefresh {
+    width: 16px;
+    visibility: visible;
+    display: block;
+}
+
+.InspectorWarningIcon {
+    width: 0px;
+    height: 16px;
+    margin-top: 3px;
+    visibility: hidden;
+    display: none;
+}
+
+.InspectorWarningIcon.showWarning {
+    width: 16px;
+    visibility: visible;
+    display: block;
+}
+
+/* style for search bar ends*/
+
+/* g1664390 move the checkbox to left */
+.inspector .variableEditorRenderers.cell.mwCheckBox {
+    margin-left: 0;
+}
+
+/* The following are for an untitled top group of properties which cannot be collapsed */
+.propertySheet .untitledGroup .dijitTitlePaneTitle,
+.propertySheet .untitledGroup .dijitTitlePaneTitleFocus,
+.propertySheet .untitledGroup .dijitArrowNode,
+.propertySheet .untitledGroup .dijitArrowNodeInner,
+.propertySheet .untitledGroup .dijitTitlePaneTextNode {
+    visibility: hidden;
+    height: 0px;
+}
+
+.propertySheet .untitledGroup.dijitTitlePane {
+    border-top: 1px solid var(--mw-borderColor-secondary);
+}
+
+.inspectorRichEditor .dijitTooltipContainer {
+    overflow: auto;
+}
+
+.propertySheet .propertySetOuterContainer>.properties .propertySet .propertyValue>.cellRenderer .inspectorOpenvarEditor .mwTextField input:focus {
+    border: 1px solid var(--mw-borderColor-focus);
+}
+
+.propertySheet .propertySetOuterContainer>.properties .propertySet .propertyValue>.cellRenderer .inspectorOpenvarEditor {
+    display: flex;
+}
+</style><style>.binaryToggleButtonEditor {
+    font-size: 0;
+}
+</style><style>/**
+ * style the icon of the drop down button
+ */
+.colorDropDownEditor .colorDropDownEditor-dropDownButton.mwWidget.mwIconMixin .mwIconNode {
+    background-repeat: repeat;
+    height: 16px;
+    width: 16px;
+    border: 1px solid var(--mw-borderColor-primary);
+}
+
+.colorDropDownEditor-dropDownButton .mwColorPickerNoneColorSwatch {
+    background-repeat: repeat;
+    background-color: var(--mw-backgroundColor-tertiary);
+    background-image: linear-gradient(45deg, #AAAAAA 25%, transparent 25%, transparent 75%, #AAAAAA 75%, #AAAAAA),
+        linear-gradient(45deg, #AAAAAA 25%, transparent 25%, transparent 75%, #AAAAAA 75%, #AAAAAA);
+    background-size: 9px 9px;
+    background-position: 0 0, 4px 4px;
+}
+
+/* Temporary, replace this once the icon is designed for auto */
+.colorDropDownEditor-dropDownButton .mwColorPickerAutoColorSwatch {
+    background-image: url(release/images/Auto-dcfb18c31aac095d11f55888b419a5c8.png);
+    background-size: 16px 16px;
+    height: 16px;
+    width: 16px;
+}
+
+
+.rgbColorEditor {
+    display: flex;
+    justify-content: space-between;
+    pointer-events: all;
+}
+
+.rgbColorEditor .colorDropDownEditor {
+    display: flex;
+}
+
+.rgbColorEditor .colorDropDownEditor .mwDropDownButton {
+    box-sizing: content-box;
+    border-radius: 3px;
+    /* width: 40px !important; */
+    /* Make sure the dropddown is sized properly, g2029316 */
+    height: 20px !important;
+}
+
+.rgbColorEditor .colorDropDownEditor .mwDropDownButton .mwFocusNode {
+
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rgbColorEditor .colorDropDownEditor .mwDropDownButton .mwFocusNode .mwButtonNode {
+    display: flex;
+    padding: 0px;
+}
+
+.rgbColorEditor .colorDropDownEditor .mwDropDownButton .mwFocusNode .mwDropDownNode {
+
+    padding-right: 0.2em;
+    padding-left: 0.2em;
+}
+
+.rgbColorEditor .colorDropDownEditor .mwDropDownButton .mwFocusNode .mwArrowIconNode {
+    margin-right: 4px;
+    margin-left: 4px;
+    /* Make sure the dropddown is sized and centered properly, g2029316 */
+    margin-top: 6px;
+}
+
+.rgbColorEditor .colorDropDownEditor .mwDropDownButton .mwFocusNode .mwButtonContainerNode {
+    display: flex;
+    align-items: center;
+    padding-left: 2px;
+}
+
+.rgbColorEditor .colorDropDownEditor .mwDropDownButton .mwFocusNode .mwIconNode {
+    margin: 0;
+    display: flex;
+}
+
+.rgbColorEditor .colorDropDownEditor .mwDropDownButton .mwFocusNode .mwTextNode {
+    display: none;
+}
+
+.rgbColorEditor .colorTextBoxEditor {
+    width: calc(100% - 45px);
+    display: flex;
+}</style><style>.colorEditor .mwColorPalette {
+    padding: 5px;
+}
+
+.colorEditor .mwColorPicker {
+    max-height: 400px;
+}
+
+.ColorEditorTooltipDialog {
+    background: transparent;
+    /* 
+  * Prevent user selection of text
+  */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.colorEditor .mwColorPicker .mwColorSpinner .mwSpinner .mwDecrementButton {
+    margin-top: 3px;
+}</style><style>.colormapEditor .mwComboBox.mwNonEditable.mwWidget.mwDefaultVisualFamily .mwComboBoxInnerContainer {
+    min-width: 25px;
+}
+
+.colormapEditor .mwComboBox.mwNonEditable.mwWidget.mwDefaultVisualFamily .mwComboBoxInnerContainer,
+.colormapEditor .mwComboBox.mwNonEditable.mwWidget.mwDefaultVisualFamily .mwComboBoxInnerContainer .colormapItem.colormapButton,
+.mwComboBoxPopup.mwWidget.mwDefaultVisualFamily .colormapMenu .colormapItem.mwSharedMenuItem {
+    width: 100% !important;
+    box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-content: center;
+    align-items: center;
+}
+
+.colormapEditor .mwComboBox.mwNonEditable.mwWidget.mwDefaultVisualFamily .mwComboBoxInnerContainer .mwTextFieldContainerNode {
+    flex: 1 0 24px;
+
+    border-radius: 5px 0 0 5px;
+}
+
+.colormapEditor .mwComboBox.mwNonEditable.mwWidget.mwDefaultVisualFamily .mwComboBoxInnerContainer .mwArrowContainerNode {
+    flex: 0 1 15px;
+    /* 22 - 7 (mwArrowNode margin right) */
+    width: 0;
+    height: 20px;
+    align-self: stretch;
+
+    border-radius: 0 5px 5px 0;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.colormapEditor .mwComboBox.mwNonEditable.mwWidget.mwDefaultVisualFamily .mwComboBoxInnerContainer .mwArrowContainerNode .mwArrowNode {
+    margin: 0;
+}
+
+.colormapEditor .mwComboBox.mwNonEditable.mwWidget.mwDefaultVisualFamily .mwComboBoxInnerContainer .colormapItem.colormapButton {
+    height: 20px !important;
+    padding: 0;
+}
+
+.colormapEditor .mwComboBox.mwNonEditable.mwWidget.mwDefaultVisualFamily .mwComboBoxInnerContainer .colormapItem.colormapButton .colormapLabel {
+    flex: 0 1 50px;
+    /* mwTextFieldContainerNode width for 'Colorcube' */
+    cursor: default;
+}
+
+.colormapItem .colormapLabel {
+    flex: 0 1 65px;
+    /* 50 + 15 (mwArrowContainerNode width) */
+    width: 0;
+    cursor: default;
+}
+
+.colormapItem .colormapIcon {
+    flex: 1 1 14px;
+
+    display: inline-block;
+    height: 12px;
+    margin: 0 4px;
+    border: 1px solid var(--mw-borderColor-secondary);
+    background-clip: content-box;
+    background: url(release/images/ico-colormaps-9132ffb8da71a11c5f81453dcee20490.png) no-repeat;
+    background-size: 103.125% 3800%;
+
+    -ms-interpolation-mode: nearest-neighbor;
+    /*IE 7+ (non-standard property)*/
+    image-rendering: -webkit-optimize-contrast;
+    /*Safari 6, UC Browser 9.9*/
+    image-rendering: -webkit-crisp-edges;
+    /*Safari 7+*/
+    image-rendering: -moz-crisp-edges;
+    /*Firefox 3.6+*/
+    image-rendering: pixelated;
+    /*Chrome 41+ and Opera 26+*/
+
+    pointer-events: none;
+}
+
+.colormapItem .colormapIcon.hiddenColormapIcon {
+    display: none;
+}
+
+.colormapItem .cmap-custom.colorOrderRenderer .colorSwatch {
+    width: auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.colormapItem .cmap-custom.colorOrderRenderer .colorSwatch .colorDiv {
+    font-size: 0;
+}
+
+.colormapItem .colormapIcon.cmap-custom {
+    background: none;
+}
+
+.colormapItem .colormapIcon.cmap-white {
+    background: white none;
+}
+
+.colormapItem .colormapIcon.cmap-parula {
+    background-position: 0 -6px;
+}
+
+.colormapItem .colormapIcon.cmap-jet {
+    background-position: 0 -30px;
+}
+
+.colormapItem .colormapIcon.cmap-hsv {
+    background-position: 0 -54px;
+}
+
+.colormapItem .colormapIcon.cmap-hot {
+    background-position: 0 -78px;
+}
+
+.colormapItem .colormapIcon.cmap-cool {
+    background-position: 0 -102px;
+}
+
+.colormapItem .colormapIcon.cmap-spring {
+    background-position: 0 -126px;
+}
+
+.colormapItem .colormapIcon.cmap-summer {
+    background-position: 0 -150px;
+}
+
+.colormapItem .colormapIcon.cmap-autumn {
+    background-position: 0 -174px;
+}
+
+.colormapItem .colormapIcon.cmap-winter {
+    background-position: 0 -198px;
+}
+
+.colormapItem .colormapIcon.cmap-gray {
+    background-position: 0 -222px;
+}
+
+.colormapItem .colormapIcon.cmap-bone {
+    background-position: 0 -246px;
+}
+
+.colormapItem .colormapIcon.cmap-copper {
+    background-position: 0 -270px;
+}
+
+.colormapItem .colormapIcon.cmap-pink {
+    background-position: 0 -294px;
+}
+
+.colormapItem .colormapIcon.cmap-lines {
+    background-position: 0 -318px;
+}
+
+.colormapItem .colormapIcon.cmap-colorcube {
+    background-position: 0 -342px;
+}
+
+.colormapItem .colormapIcon.cmap-prism {
+    background-position: 0 -366px;
+}
+
+.colormapItem .colormapIcon.cmap-flag {
+    background-position: 0 -390px;
+}
+
+.colormapItem .colormapIcon.cmap-turbo {
+    background-position: 0 -414px;
+}
+
+.colormapItem .colormapIcon.cmap-sky {
+    background-position: 0 -438px;
+}
+</style><style>.colorOrderEditor {
+    display: inline-block;
+    white-space: nowrap;
+    width: 100%
+}
+
+.colorOrderEditor .colorListDiv .colorTextBoxEditor {
+    width: 100%;
+    margin-right: 3px;
+}
+
+.colorOrderEditor .colorTextBoxEditor .colorValue input {
+    height: 22px;
+}
+
+.colorOrderEditor .colorListDiv {
+    max-height: 300px;
+    padding: 0 4px 0 2px;
+    overflow: auto;
+}
+
+.colorOrderEditor .colorListDiv .colorList {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    display: inline-block;
+    overflow: visible;
+    pointer-events: none;
+    width: 100%;
+}
+
+.colorOrderEditor .colorListDiv .colorList .colorListItem {
+    /*margin-top: 5px;*/
+    /*margin-bottom: 5px;*/
+    margin: 0px;
+    padding: 0 4px 2px 0;
+    border: 0px;
+    border-bottom: 1px solid var(--mw-borderColor-secondary);
+    box-sizing: border-box;
+    width: 100%;
+    pointer-events: none;
+}
+
+.colorOrderEditor .colorListDiv .colorList .colorListItem.dojoDndItemBefore {
+    border-top: 1px solid var(--mw-borderColor-primary);
+}
+
+.colorOrderEditor .colorListDiv .colorList .colorListItem.dojoDndItemAfter {
+    border-bottom: 1px solid var(--mw-borderColor-primary);
+}
+
+.colorOrderEditor .colorListDiv .colorList .colorListItem .colorDragHandle {
+    background-size: 6px;
+    background-color: var(--mw-color-primary);
+    background-repeat: no-repeat;
+    color: transparent;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: middle;
+    pointer-events: all;
+}
+
+.colorOrderEditor .colorListDiv .colorList .colorListItem .colorEditor {
+    display: inline-block;
+    white-space: nowrap;
+    width: 90%;
+    vertical-align: top;
+    pointer-events: all;
+}
+
+/* Make Width of ColorOrderEditor 82% to ensure widgets do not overlap with scrollbar in Mac(g1504049 & g1514156)*/
+.colorOrderEditor.macScrollBarWidth .colorListDiv .colorList .colorListItem .colorEditor {
+    width: 82%;
+}
+
+.colorOrderEditor.macScrollBarWidth .colorListDiv .colorList .colorListItem .colorEditor .colorTextBoxEditor.macScrollBarWidth {
+    width: 90%;
+}
+
+.colorOrderEditor .colorListDiv .colorList .colorListItem .colorDeleteDiv {
+    background-size: 12px;
+    background-position: 4%;
+    background-repeat: no-repeat;
+    color: transparent;
+    background-color: transparent;
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: middle;
+    pointer-events: all;
+    margin-left: 5px;
+}
+
+.colorOrderEditor.colorListItemAvatar.dojoDndItem {
+    height: 22px;
+    background-color: var(--mw-backgroundColor-primary);
+}
+
+.colorOrderEditor .colorListDiv .colorList .colorListItem .colorDeleteDiv:hover {
+    background: var(--mw-backgroundColor-hover);
+    border-color: var(--mw-borderColor-hover);
+    background-size: 13px;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+}
+
+.colorOrderEditor .buttonPanel {
+    text-align: right;
+    padding-right: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.colorOrderEditor .colorAddButton {
+    height: 20px;
+    padding: 1px 8px;
+    border: 1px solid;
+    border-color: var(--mw-borderColor-secondary);
+    text-align: center;
+    font-size: 11px;
+    border-radius: 3px;
+    background: var(--mw-backgroundColor-primary);
+}
+
+.colorOrderEditor .colorAddButton:hover {
+    background: var(--mw-backgroundColor-hover);
+    border-color: var(--mw-borderColor-hover);
+}
+
+.colorOrderEditor .colorAddButton:active {
+    background: var(--mw-backgroundColor-hover);
+    border-color: var(--mw-borderColor-hover);
+}
+
+.colorOrderEditor .colorAddButton:focus {
+    outline: 0;
+}
+
+.colorOrderEditor .colorList.container li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.colorOrderEditor .rgbColorEditor {
+    width: 100%
+}</style><style>.colorOrderRenderer .colorSwatch {
+    display: flex;
+    border: 1px solid var(--mw-borderColor-secondary);
+    margin: 4px 4px 5px 2px;
+    cursor: default;
+}
+
+.colorOrderRenderer .colorSwatch .colorDiv {
+    display: inline-block;
+    white-space: nowrap;
+    cursor: default;
+}</style><style>.variableEditorRenderers.cell.colorTextBoxEditor .colorSwatch {
+    width: 20%;
+    height: 10px;
+    display: inline-block;
+    white-space: nowrap;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border: 1px;
+    border-style: solid;
+    border-color: var(--mw-borderColor-secondary);
+    vertical-align: middle;
+}
+
+.variableEditorRenderers.cell.colorTextBoxEditor .colorValue {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+}
+
+.variableEditorRenderers.cell.colorTextBoxEditor .colorValue .mwTextField {
+    width: 100%;
+    height: 22px;
+    border: none;
+    vertical-align: middle;
+    background-image: none;
+    border: solid 1px var(--mw-borderColor-primary);
+}
+
+/*.variableEditorRenderers.cell.colorTextBoxEditor .colorValue > .cellRenderer.Editing  .mwTextField input {*/
+.variableEditorRenderers.cell.colorTextBoxEditor .colorValue .mwTextField {
+    border: 1px solid var(--mw-borderColor-focus);
+}
+
+.variableEditorRenderers.cell.colorTextBoxEditor .colorValue .mwTextFieldReadOnly {
+    width: 100%;
+    height: 22px;
+    border: solid 1px var(--mw-borderColor-primary);
+    vertical-align: middle;
+    background-image: none;
+    padding-left: 4px;
+    padding-right: 4px;
+    outline: none;
+}
+
+.variableEditorRenderers.cell.colorTextBoxEditor .colorValue input.mwInputNode {
+    font-size: 11px;
+    box-shadow: none;
+    height: 17px;
+    vertical-align: middle;
+    margin-top: 1px;
+}
+
+.variableEditorRenderers.cell.colorTextBoxEditor .colorValue .variableEditorRenderers.variableEditorNotEditable {
+    font-style: normal;
+    color: var(--mw-color-primary);
+    font-size: 11px;
+}
+
+.variableEditorRenderers.cell.colorTextBoxEditor .venoteditable {
+    opacity: 0.35;
+}</style><style>/* CSS provided here corresponds to the editors folder, which is exclusively used by the Property Inspector */
+
+.mw-table-outer-wrapper,
+.mw-table-outer-wrapper-blurred {
+    /*max-width: 219px !important;*/
+}
+
+.buttons-container {
+    margin-top: 5px;
+}
+
+.buttons-container .mwPushButton {
+    margin-left: 5px;
+}
+
+.buttons-container .mwPushButton:first-child {
+    margin-left: 0;
+}
+
+.dijitPopup.mwColorPickerPopup {
+    background-color: var(--mw-backgroundColor-tertiary);
+    border: 1px solid var(--mw-borderColor-primary);
+}
+
+.mw-table-row .mw-table-cell .mwDropDownButton {
+    width: 100% !important;
+    min-width: 0px !important;
+    height: auto;
+    border-radius: 0 !important;
+    background: black !important;
+    min-height: 0px;
+}
+
+.display-format-richeditor {
+    font-size: 11px;
+    user-select: none;
+}
+
+.display-format-richeditor td {
+    height: 22px;
+    vertical-align: middle;
+}
+
+.display-format-richeditor td.row-label {
+    padding-left: 5px;
+}
+
+.display-format-richeditor td.row-suffix {
+    padding-left: 5px;
+}
+
+.display-format-richeditor td .row-input {
+    width: 70px !important;
+}
+
+
+.hyperlinkEditor {
+    color: var(--mw-color-hyperlink, rgb(0, 114, 189));
+    /* Company standard blue color*/
+    cursor: pointer;
+    /*width: fit-content;*/
+}
+
+.hyperlinkEditor:focus {
+    outline: 1px solid var(--mw-color-hyperlink, rgb(0, 114, 189));
+}
+
+
+.inspector-editor.dgrid-inspector-editor {
+    width: 251px;
+}
+
+.inspector-editor.dgrid-inspector-editor>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inspector-editor.dgrid-inspector-editor .tableContainer {
+    width: 216px;
+}
+
+.inspector-editor.dgrid-inspector-editor .tableContainer .vc-pe-editableTable {
+    width: 100%;
+    height: 130px;
+}
+
+.inspector-editor.dgrid-inspector-editor .tableContainer .vc-pe-editableTable input.dgrid-input[type='text'] {
+    height: 100%;
+    padding: 0;
+    padding-left: 2px;
+    width: calc(100% - 3px);
+    margin: 0;
+    font-size: 12px;
+    border: none;
+}
+
+
+.inspector-editor.dgrid-inspector-editor .tableContainer .vc-pe-editableTable.dgrid .dgrid-row td:last-child {
+    /* text-align: center; */
+    border-right: 1px solid var(--mw-borderColor-secondary);
+}
+
+.inspector-editor.dgrid-inspector-editor .tableContainer .vc-pe-editableTable .dgrid-cell-editing {
+    padding: 1px;
+}
+
+.inspector-editor.dgrid-inspector-editor .tableContainer .vc-pe-editableTable .dgrid-selected {
+    background-color: var(--mw-backgroundColor-selectedFocus);
+    color: var(--mw-color-variableMetadata-selected);
+}
+
+
+.inspector-editor.dgrid-inspector-editor .tableContainer .vc-pe-editableTable .dgrid-scroller {
+    margin-top: 17px;
+    border-top: 1px solid var(--mw-borderColor-secondary);
+}
+
+.inspector-editor.dgrid-inspector-editor .tableContainer .vc-pe-editableTable.dgrid {
+    border: 1px solid var(--mw-borderColor-secondary);
+    background: var(--mw-backgroundColor-primary);
+    color: var(--mw-color-primary);
+}
+
+.inspector-editor.dgrid-inspector-editor .tableContainer .vc-pe-editableTable.dgrid .dgrid-header {
+    background: var(--mw-backgroundColor-primary);
+}
+
+.inspector-editor.dgrid-inspector-editor .tableContainer .vc-pe-editableTable.dgrid .dgrid-scroller {
+    background: var(--mw-backgroundColor-tertiary);
+}
+
+.inspector-editor.dgrid-inspector-editor .tableContainer .vc-pe-editableTable .dgrid-cell {
+    border-left: none;
+    border-right: 1px solid var(--mw-borderColor-secondary);
+    border-bottom: 1px solid var(--mw-borderColor-secondary);
+}
+
+.inspector-editor.dgrid-inspector-editor .tableContainer .vc-pe-editableTable th.dgrid-cell {
+    border-bottom: none;
+}
+
+.inspector-editor.dgrid-inspector-editor .tableContainer .vc-pe-editableTable .dgrid-row .dgrid-cell:last-child {
+    border-right: none;
+}
+
+.inspector-editor.dgrid-inspector-editor .plusMinusButtonsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.inspector-editor.dgrid-inspector-editor .plusMinusButtonsContainer .vc-pe-addDeleteRowStatesTearawayButtons .mwEmptyNode {
+    display: none;
+}
+
+.inspector-editor.dgrid-inspector-editor .plusMinusButtonsContainer .vc-pe-addDeleteRowStatesTearawayButtons .vc-ps-table-add-icon::before {
+    width: 3px;
+    top: 50%;
+    left: 50%;
+    height: 70%;
+    content: "";
+    position: absolute;
+    transform: translate(-1.5px, -50%);
+    border-radius: 2px;
+}
+
+.inspector-editor.dgrid-inspector-editor .plusMinusButtonsContainer .vc-pe-addDeleteRowStatesTearawayButtons .vc-ps-table-add-icon::after,
+.inspector-editor.dgrid-inspector-editor .plusMinusButtonsContainer .vc-pe-addDeleteRowStatesTearawayButtons .vc-ps-table-remove-icon::after {
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    height: 3px;
+    content: "";
+    position: absolute;
+    transform: translate(-50%, -1.5px);
+    border-radius: 2px;
+}
+
+.inspector-editor.dgrid-inspector-editor .plusMinusButtonsContainer .mwPushButton:first-child {
+    margin-bottom: 0px;
+    margin-left: 3px;
+}
+
+.inspector-editor.dgrid-inspector-editor .plusMinusButtonsContainer .mwPushButton:last-child {
+    margin-top: 6px;
+    margin-left: 3px;
+}
+
+.inspector-editor.dgrid-inspector-editor .additionalButtonsContainer {
+    display: none;
+}
+
+.inspector-editor.dgrid-inspector-editor .field-scaleColor,
+.inspector-editor.dgrid-inspector-editor .field-start,
+.inspector-editor.dgrid-inspector-editor .field-end {
+    width: 33.333333%;
+    font-size: 12px;
+}
+
+
+.itemsEditor.inspector-editor.dgrid-inspector-editor .dgrid-column-0,
+.itemsEditor.inspector-editor.dgrid-inspector-editor .dgrid-column-1 {
+    width: 50%;
+    font-size: 12px;
+}
+
+.inspector-editor.dgrid-inspector-editor .dgrid-header.dgrid-header-row th {
+    text-align: left;
+    white-space: nowrap;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--mw-color-primary);
+}
+
+.inspector-editor.dgrid-inspector-editor .dgrid-content .dgrid-cell {
+    height: 22px;
+    vertical-align: middle;
+}
+
+.inspector-editor.dgrid-inspector-editor .dgrid-content td.dgrid-cell.dgrid-focus {
+    position: relative;
+}
+
+.inspector-editor.dgrid-inspector-editor .dgrid-content td.dgrid-cell.dgrid-focus:focus:before,
+.inspector-editor.dgrid-inspector-editor .dgrid-content td.dgrid-cell.dgrid-focus input[type='radio']:focus:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid var(--mw-borderColor-focus);
+}
+
+.inspector-editor.dgrid-inspector-editor .dgrid-content td.dgrid-cell.dgrid-focus input[type='radio']:focus {
+    outline: none;
+}
+
+
+
+
+.inspector-editor.dgrid-inspector-editor td.vc-pe-colorColumnCell {
+    position: relative;
+}
+
+.inspector-editor.dgrid-inspector-editor td.vc-pe-colorColumnCell:before {
+    content: "";
+    position: absolute;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    top: 0;
+    border: 2px solid;
+    left: 0;
+}
+
+#linestyletextbox {
+    padding-left: 0;
+    padding-right: 0;
+    height: 22px;
+    width: 100%;
+}
+
+#linestyletextbox input {
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 11px;
+}
+
+.linestyleordergrid.dgrid {
+    height: auto;
+}
+
+.linestyleordergrid.dgrid .dgrid-header-row {
+    position: static;
+    margin-right: 17px;
+}
+
+.linestyleordergrid .dgrid-scroller {
+    position: static;
+    max-height: 300px;
+    margin-top: 0;
+}
+
+.linestyleordergrid .dgrid-header .dgrid-cell {
+    border-left-style: none;
+}
+
+.linestyleordergrid .dgrid-content .dgrid-cell {
+    padding-right: 5px;
+    border-top-style: solid;
+    border-left-style: none;
+    border-bottom-style: none;
+}
+
+.linestyleordergrid .dgrid-content .dgrid-row:nth-child(1) .dgrid-cell {
+    border-top-style: none;
+}
+
+.linestyleordergrid .dijitComboBox {
+    width: 100%;
+}
+
+.linestyleordergrid .dijitComboBox .dijitInputContainer {
+    padding: 0 2px;
+}
+
+.linestyleordergrid .mwPushButton {
+    margin-right: 5px;
+}
+
+[data-tag="datatools.variableeditor.views.editors.lineStyleOrderEditor.linestyleaddbutton"] {
+    margin-right: 5px;
+}
+
+[data-tag="datatools.variableeditor.views.editors.lineStyleOrderEditor.linestyleremovebutton"] {
+    margin-right: 5px;
+}
+
+[data-tag="datatools.variableeditor.views.editors.lineStyleOrderEditor.linestyleupbutton"] {
+    margin-right: 5px;
+}
+
+/*UITableColumnEditor*/
+.UITableColumnEditor .UITableColumnEditor-top-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.UITableColumnEditor .UITableColumnEditor-table-container {
+    width: 270px;
+    height: 200px;
+}
+
+.UITableColumnEditor .UITableColumnEditor-table-container .mwTableHeaderAffordancePlaceholder {
+    width: 0px;
+}
+
+.UITableColumnEditor .UITableColumnEditor-table-container .mw-table-header-label {
+    text-align: center;
+}
+
+.UITableColumnEditor .UITableColumnEditor-buttons-container {
+    padding-left: 3px;
+    display: flex;
+    flex-direction: column;
+}
+
+.UITableColumnEditor .UITableColumnEditor-buttons-container .pushButton:nth-child(2) {
+    margin-top: 3px;
+}
+
+.UITableColumnEditor .UITableColumnEditor-buttons-container .mwContentWrapperNode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0;
+}
+
+.UITableColumnEditor .UITableColumnEditor-buttons-container .mwTextNode.mwEmptyNode {
+    display: none;
+}
+
+.datePickerEditor .dijitDownArrowButton {
+    width: 100% !important;
+}
+
+.datePickerEditor .mwTextFieldContainerNode {
+    width: calc(100% - 20px) !important;
+}
+
+.datePickerEditor .mwArrowContainerNode {
+    width: 20px !important;
+}
+
+.datePickerEditor .mwTextFieldContainerNode .mwTextField {
+    width: 100% !important;
+}
+
+
+.dijitTooltipContainer {
+    background-color: var(--mw-backgroundColor-tertiary) !important;
+    border-color: var(--mw-borderColor-primary) !important;
+    color: var(--mw-color-primary) !important;
+    box-shadow: none !important;
+    background-image: none !important;
+}
+
+.mw-theme-dark .dijitTooltipConnector {
+    filter: invert(100%);
+    box-shadow: none !important;
+}
+
+.inspectorRichEditor .CheckboxListEditor {
+    width: 200px;
+}
+
+.inspectorRichEditor .CheckboxListEditor .CheckboxListEditor-table-container {
+    width: 100%;
+    max-height: 200px;
+    overflow: auto;
+}
+
+.inspectorRichEditor .CheckboxListEditor .CheckboxListEditor-table-container .mw-table-row .mw-table-cell:not(.mw-table-cell-focused) {
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+/* css for the select all/clear all is the same as in the table filtering dialog */
+.inspectorRichEditor .CheckboxListEditor .select-all-label {
+    display: inline-block;
+    /* TODO update when there is a specific variable for labels with callback */
+    color: var(--mw-color-list-primary);
+    font-family: Arial,
+        regular;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-left: 10px;
+    font-size: 11px;
+}
+
+.inspectorRichEditor .CheckboxListEditor .clear-all-label {
+    float: right;
+    display: inline-block;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-right: 10px;
+    /* TODO update when there is a specific variable for labels with callback */
+    color: var(--mw-color-list-primary);
+    font-family: Arial, regular;
+    font-size: 11px;
+}
+
+/* Style for the ticks editor starts */
+.muinusIcon {
+    width: 16px;
+    height: 16px;
+    background-position: center;
+
+}
+
+.plusIcon {
+    width: 16px;
+    height: 16px;
+    background-position: center;
+}
+
+.ticksdialogButton {
+    margin: 1px;
+    height: 22px;
+    width: 22px;
+}
+
+.ticksDialogContainer .mw-table-header-label {
+    color: var(--mw-color-primary);
+    text-transform: none;
+    font-size: 10px;
+}
+
+.ticksDialogContainer {
+    display: flex;
+    padding: 10px;
+}
+
+.noselect {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+.ticksDialogButtonContainer {
+    width: 22px;
+    height: 100%;
+    padding-left: 5px;
+
+}
+
+.ticksDialogTable {
+    width: 200px;
+    height: 200px;
+
+}
+
+.errorMsg {
+    color: var(--mw-color-error);
+    cursor: default;
+    max-width: 225px;
+}
+
+.nonModal_underlay {
+    display: none
+}
+
+.headerEditorTicks {
+    display: flex;
+    align-items: baseline;
+}
+
+.headerEditorTicks .autoButtonContainer {
+    width: 100%;
+    margin-top: 3px;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    margin-left: 0px;
+}
+
+.headerEditorTicks .autoButtonContainer .mwTextLine {
+    color: var(--mw-color-primary);
+}
+
+.ticksdialogHeaderButton {
+    width: 100% !important;
+    border: none !important;
+}
+
+.tundra .dijitTooltipBelow .dijitTooltipConnector {
+    background: none;
+}
+
+.ticksEditorHeaderContent .mwContentWrapperNode {
+    background: var(--mw-backgroundColor-primary) !important;
+}
+
+.ticksEditorHeaderContent .autoButtonContainer .mwDefaultVisualFamily.mwPushButton .mwTextNode,
+.ticksEditorHeaderContent .autoButtonContainer .mwDefaultVisualFamily.mwToggleButton .mwTextNode {
+    padding: 0px;
+}
+
+.ticksEditorHeaderContent .separator {
+    width: 100%;
+    background-color: var(--mw-backgroundColor-primary);
+    height: 1px;
+    margin: 3px;
+}
+
+.ticksEditorHeaderContent .stepbyLabel {
+    margin-right: 3px;
+}
+
+/* Style for the ticks editor ends */
+
+.InspectorLabelEditor .mwIconAndTextContainerNode {
+    font-size: 11px;
+    font-family: Arial, regular;
+}
+
+.inspectorOpenvarEditor .openvarTextField {
+    width: calc(100% - 20px) !important;
+}
+
+.inspectorOpenvarEditor .openvarTextFieldNoBtn {
+    width: 100% !important;
+}
+
+.inspectorOpenvarEditor .mwTextField input {
+    font-size: 11px;
+}
+
+mw-rendererseditors-baseopenvar {
+    display: inline !important;
+}</style><style>.filePickerEditor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filePickerEditor>.cellRenderer {
+    flex: 1 1 100px;
+    height: 22px;
+}
+
+.filePickerEditor .mwToggleButton.mwWidget {
+    flex: 0 0 auto;
+    min-width: 29px;
+    margin-left: 5px;
+}
+
+.filePickerEditor .fileIcon {
+    height: 16px;
+    width: 16px;
+    margin-left: 3px;
+    padding-top: 0px;
+}
+
+.filePickerEditor .mwToggleButton:hover .fileIcon,
+.filePickerEditor .open .fileIcon {
+    background-position: -2px -2px;
+}
+
+.filePickerEditor .mwIconAndTextContainerNode {
+    display: flex !important;
+}
+
+.filePickerEditor .mwTextField .mwInputNode {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}</style><style>.hyperlinkURLEditor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hyperlinkURLEditor > .cellRenderer {
+    flex: 1 1 100px;
+    height: 22px;
+}
+
+.hyperlinkURLEditor .mwPushButton.mwWidget {
+    flex: 0 0 auto;
+    min-width: 29px;
+    margin-left: 5px;
+}
+
+.hyperlinkURLEditor .mwPushButton.mwEnabled .mwIconAndTextContainerNode:hover {
+    cursor: pointer;
+}
+
+.hyperlinkURLEditor .visitIcon {
+    background: url(release/images/visit-link-24db80118b5605ce0e6544027bbac943.png);
+    height: 16px;
+    width: 16px;
+    margin-left: 3px;
+    padding-top: 0px;
+}
+
+.hyperlinkURLEditor .mwPushButton:hover .fileIcon,
+.hyperlinkURLEditor .open .fileIcon {
+    background-position: -2px -2px;
+}
+
+.hyperlinkURLEditor .mwIconAndTextContainerNode {
+    display: flex !important;
+}
+
+.hyperlinkURLEditor .mwTextField .mwInputNode {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}</style><style>.multilineTextEditor .mwInputNode {
+    /* IE11 textarea inherits from parent */
+    white-space: pre-wrap;
+
+    /* Firefox reserves extra space for horizontal scrollbar */
+    overflow-x: hidden;
+}
+
+.multilineTextEditor .mwTextArea:not(.mwTextAreaFocused) {
+    border-color: #999;
+}
+
+.multilineTextEditor .mwTextArea:not(.mwTextAreaFocused) .mwInputNode {
+    color: transparent;
+    text-shadow: 0 0 0 rgb(68, 68, 68);
+}
+
+.multilineTextEditor .bumper {
+    /* Visually hidden */
+    display: block;
+    width: 0;
+    height: 0;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    overflow: hidden;
+}</style><style>.inspectorSliderEditor {
+    display: block;
+    align-items: initial;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.inspectorSliderEditor .mwTextField {
+    margin-top: 4px;
+    width: 50px;
+}
+
+.inspectorSliderEditor .venoteditable {
+    opacity: 0.35;
+}
+
+.inspectorSliderEditor .sliderHorizontalRule {
+    height: 5px;
+}
+
+.inspectorSliderEditor .dijitSlider {
+    min-width: 50px;
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.inspectorSliderEditor .sliderTopDiv {
+    display: flex;
+    height: 25px;
+    margin-top: 10px;
+}
+
+.inspectorSliderEditor .sliderBottomDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inspectorSliderEditor .sliderMinLabel, .inspectorSliderEditor .sliderMaxLabel {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.inspectorSliderEditor .sliderMinLabelSmall {
+    margin-left: 60px;
+}</style><style>.inspectorSpinnerEditor .mwSpinner {
+    width: 100% !important;
+    overflow: visible;
+}
+
+.inspectorSpinnerEditor .mwSpinner .mwContainerNode {
+    width: calc(100% - 20px) !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.inspectorSpinnerEditor .mwSpinner .mwContainerNode .mwTextField {
+    width: 100% !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+</style><style>.toggleButtonGroupEditor {
+    font-size: 0;
+}
+.toggleButtonGroupEditor .mwToggleButton {
+    margin-left: 3px;
+}
+.toggleButtonGroupEditor .mwToggleButton:first-child {
+    margin-left: 0;
+}
+</style><style>.mw_type_Table.arrayTable .cell .UITableNonEditable .mwComboBox,
+.mw_type_Table.arrayTable .cell .UITableNonEditable .mwComboBox .mwTextFieldContainerNode,
+.mw_type_Table.arrayTable .cell .UITableNonEditable .mwComboBox .mwTextFieldContainerNode .mwTextField{
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.mw_type_Table.arrayTable .cell .UITableNonEditable .mwComboBox,
+.mw_type_Table.arrayTable .cell .UITableNonEditable .mwComboBox .mwTextFieldContainerNode .mwTextField {
+    background: inherit;
+}
+
+.mw_type_Table.arrayTable .cell .UITableNonEditable .mwComboBox .mwTextFieldContainerNode{
+    background: transparent;
+}
+
+.mw_type_Table.arrayTable .cell .UITableNonEditable .mwComboBox{
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border: 0px;
+}
+
+.mw_type_Table.arrayTable .cell .groupedColumnRenderer .mwComboBox.venoteditable .mwArrowContainerNode{
+    display: none;
+}
+
+.mw_type_Table.arrayTable .cell .groupedColumnRenderer .mwComboBox .mwArrowContainerNode{
+    border-left: 1px solid rgb(166,166,166);
+}</style><style>.info-16 {
+    width: 16px;
+    height: 16px;
+}</style><style>mw-datatools-sparkline {
+    --sparkline-default-height: 32px;
+    --sparkline-line-color: var(--mw-graphics-colorOrder-1, var(--mw-color-blue500, #268CDD));
+    --sparkline-nan-line-color: var(--mw-graphics-colorOrder-2, var(--mw-color-red600, #B7312C));
+    --sparkline-histogram-color: var(--mw-graphics-colorOrder-1, var(--mw-color-blue500, #268CDD));
+    --sparkline-background-color: var(--mw-backgroundColor-primary, var(--mw-color-gray50, #f5f5f5));
+    /* --sparkline-bin-hover-color: var(--mw-backgroundColor-sparkline-hover, var(--mw-color-orange500, #F57729)); */
+    --sparkline-bin-hover-color: var(--mw-backgroundColor-sparkline-hover, var(--mw-color-blue550, #1171BE));
+    --sparkline-scroll-position: 0%;
+    --sparkline-scroll-visiblity:  hidden;
+}
+
+mw-datatools-sparkline,
+.sparklineGroupVar
+ {
+    max-height: var(--sparkline-default-height);
+    min-height: var(--sparkline-default-height);
+    display: block;
+    overflow: hidden;
+    position: relative;
+    white-space: normal;
+    background-color: none;
+}
+
+.sparklineGroupVar table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.datatools-custom-renderer .sparkLine {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+
+.datatools-custom-renderer .sparkLine > canvas {
+    max-height: var(--sparkline-default-height);
+    min-height: var(--sparkline-default-height);
+    width: 100%;
+}</style><style>mw-datatools-sparkline-interactive {
+    --sparkline-default-height: 32px;
+    --sparkline-line-color: var(--mw-graphics-colorOrder-1, var(--mw-color-blue500, #268CDD));
+    --sparkline-nan-line-color: var(--mw-graphics-colorOrder-2, var(--mw-color-red600, #B7312C));
+    --sparkline-histogram-color: var(--mw-graphics-colorOrder-1, var(--mw-color-blue500, #268CDD));
+    --sparkline-background-color: var(--mw-backgroundColor-primary, var(--mw-color-gray50, #f5f5f5));
+    /* --sparkline-bin-hover-color: var(--mw-backgroundColor-sparkline-hover, var(--mw-color-orange500, #F57729)); */
+    --sparkline-bin-hover-color: var(--mw-backgroundColor-sparkline-hover, var(--mw-color-blue550, #1171BE));
+    --sparkline-scroll-position: 0%;
+    --sparkline-scroll-visiblity:  hidden;
+}
+
+mw-datatools-sparkline-interactive,
+.sparklineGroupVar
+ {
+    max-height: var(--sparkline-default-height);
+    min-height: var(--sparkline-default-height);
+    display: block;
+    overflow: hidden;
+    position: relative;
+    white-space: normal;
+    background-color: none;
+    background: var(--mw-backgroundColor-tertiary, none);
+}
+
+.sparklineGroupVar table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.datatools-custom-renderer .sparkLine {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+
+.datatools-custom-renderer .sparkLine > canvas {
+    max-height: var(--sparkline-default-height);
+    min-height: var(--sparkline-default-height);
+    width: 100%;
+}</style><style>:root {
+    --linterenderer-default-width: 16px;
+    --linterenderer-bin-color: var(--mw-backgroundColor-linterenderer, var(--mw-color-yellow500-warning, #FFD60A));
+    --linterenderer-bin-hover-color: var(--mw-backgroundColor-lintrenderer-hover, var(--mw-color-hyperlink-hover, var(--mw-color-blue500, #268CDD)));
+    --linterenderer-bin-selected-color: var(--mw-backgroundColor-lintrenderer-selected, var(--mw-color-hyperlink-visited, var(--mw-color-blue700, #104280)));
+}
+
+mw-datatools-linterenderer {
+    max-width: var(--linterenderer-default-width);
+    min-width: var(--linterenderer-default-width);
+    display: block;
+    overflow: hidden;
+    position: relative;
+    white-space: normal;
+    background-color: none;
+}
+
+.datatools-custom-renderer .linterenderer {
+    position: relative;
+    height: 100%;
+    display: block;
+}
+
+.datatools-custom-renderer .linterenderer > canvas {
+    max-width: var(--linterenderer-default-width);
+    min-width: var(--linterenderer-default-width);
+    height: 100%;
+}
+</style><style>mw-datatools-plotrenderer {
+    --plotrenderer-default-yaxis-width: 30px;
+    --plotrenderer-default-xaxis-height: 20px;
+    --plotrenderer-default-height: 100%;
+    --plotrenderer-default-width: 80%;
+    --plotrenderer-axes-color: var(--mw-color-primary, var(--mw-color-gray900, #212121));
+    --plotrenderer-axes-font-color: var(--mw-color-primary, var(--mw-color-gray900, #212121));
+    --plotrenderer-axes-font: 12px Helvetica;
+}
+
+mw-datatools-plotrenderer div.plotrendererWrapper {
+    max-height: var(--plotrenderer-default-height);
+    min-height: var(--plotrenderer-default-height);
+
+    display: grid;
+    grid-template-columns: var(--plotrenderer-default-yaxis-width) auto;
+    gap: 0px;
+    grid-template-rows: calc(var(--plotrenderer-default-height) - var(--plotrenderer-default-xaxis-height)) var(--plotrenderer-default-xaxis-height);
+}
+
+mw-datatools-plotrenderer .plotrendererYAxis {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+
+    min-width: var(--plotrenderer-default-yaxis-width);
+    max-width: var(--plotrenderer-default-yaxis-width);
+
+    height: 100%;
+}
+
+mw-datatools-plotrenderer .plotrendererCornerSpacer {
+    grid-row: 2 / 2;
+    grid-column: 1 / 1;
+
+    min-width: var(--plotrenderer-default-yaxis-width);
+    max-width: var(--plotrenderer-default-yaxis-width);
+
+    min-height: var(--plotrenderer-default-xaxis-height);
+    max-height: var(--plotrenderer-default-xaxis-height);
+}
+
+mw-datatools-plotrenderer .plotrendererXAxis {
+    grid-row: 2 / 2;
+    grid-column: 2 / 2;
+
+    min-height: var(--plotrenderer-default-xaxis-height);
+    max-height: var(--plotrenderer-default-xaxis-height);
+
+    width: 100%
+}
+
+mw-datatools-plotrenderer mw-datatools-sparkline {
+    grid-row: 1 / 1;
+    grid-column: 2 / 2;
+
+    min-height: calc(var(--plotrenderer-default-height) - var(--plotrenderer-default-xaxis-height));
+    max-height: calc(var(--plotrenderer-default-height) - var(--plotrenderer-default-xaxis-height));
+}
+
+mw-datatools-plotrenderer {
+    white-space: normal;
+}
+
+mw-datatools-plotrenderer mw-datatools-sparkline canvas#sparklineCanvas {
+    min-height: calc(var(--plotrenderer-default-height) - var(--plotrenderer-default-xaxis-height));
+    max-height: calc(var(--plotrenderer-default-height) - var(--plotrenderer-default-xaxis-height));
+}</style><style>mw-datatools-plotrenderer-interactive {
+    --plotrenderer-default-yaxis-width: 30px;
+    --plotrenderer-default-xaxis-height: 20px;
+    --plotrenderer-default-height: calc(100% - 16px);
+    --plotrenderer-default-width: 80%;
+    --plotrenderer-axes-color: var(--mw-color-primary, var(--mw-color-gray900, #212121));
+    --plotrenderer-axes-font-color: var(--mw-color-primary, var(--mw-color-gray900, #212121));
+    --plotrenderer-axes-font: 12px Helvetica;
+
+    position: absolute;
+    top: 16px;
+    white-space: normal;
+    height: 100%;
+    width: 90%;
+}
+
+mw-datatools-plotrenderer-interactive div.plotrendererWrapper {
+    max-height: 100%;
+    min-height: 100%;
+
+    display: grid;
+    grid-template-columns: var(--plotrenderer-default-yaxis-width) auto;
+    gap: 0px;
+    grid-template-rows: calc(var(--plotrenderer-default-height) - var(--plotrenderer-default-xaxis-height)) var(--plotrenderer-default-xaxis-height);
+}
+
+mw-datatools-plotrenderer-interactive .plotrendererYAxis {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+
+    min-width: var(--plotrenderer-default-yaxis-width);
+    max-width: var(--plotrenderer-default-yaxis-width);
+
+    height: 100%;
+}
+
+mw-datatools-plotrenderer-interactive .plotrendererCornerSpacer {
+    grid-row: 2 / 2;
+    grid-column: 1 / 1;
+
+    min-width: var(--plotrenderer-default-yaxis-width);
+    max-width: var(--plotrenderer-default-yaxis-width);
+
+    min-height: var(--plotrenderer-default-xaxis-height);
+    max-height: var(--plotrenderer-default-xaxis-height);
+}
+
+mw-datatools-plotrenderer-interactive .plotrendererXAxis {
+    grid-row: 2 / 2;
+    grid-column: 2 / 2;
+
+    min-height: var(--plotrenderer-default-xaxis-height);
+    max-height: var(--plotrenderer-default-xaxis-height);
+
+    width: 100%
+}
+
+mw-datatools-plotrenderer-interactive mw-datatools-sparkline-interactive {
+    grid-row: 1 / 1;
+    grid-column: 2 / 2;
+    max-height: 100%;
+    min-height: 100%;
+}
+
+mw-datatools-plotrenderer-interactive mw-datatools-sparkline-interactive #sparklineDiv {
+    height: 100%;
+}
+
+mw-datatools-plotrenderer-interactive #rangeSignifierCanvas {
+    grid-row: 1/1;
+    grid-column: 2/2;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+mw-datatools-plotrenderer-interactive mw-datatools-sparkline-interactive canvas#sparklineCanvas {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}</style><style>mw-datatools-statsrenderer
+{
+    display: none;
+    margin-top: 5px;
+}
+
+mw-datatools-statsrenderer.statsDocked
+{
+    display: grid;
+}
+
+mw-datatools-statsrenderer div#outterStatsDiv {
+    display: grid;
+}
+
+mw-datatools-statsrenderer table {
+    margin-top: 5px;
+    table-layout: fixed;
+}
+
+mw-datatools-statsrenderer td {
+    font-weight: normal;
+    color: var(--mw-color-secondary, #616161);
+    text-align: left;
+    overflow: hidden;
+}
+
+mw-datatools-statsrenderer .statsLabel {
+    font-weight: bold;
+    text-align: left;
+    padding-right: 5px;
+}
+
+mw-datatools-statsrenderer th {
+    font-weight: bold;
+    color: var(--mw-color-secondary, #616161);
+    text-align: left;
+    background-color: var(--mw-backgroundColor-secondary, #e6e6e6);
+    display: none;
+}
+</style><style>
+</style><style>/*This component must include all the dependencies for other downstream components*/
+</style><style>/* This file should only have 1-p css dependencies as well as export.css
+ * Note: We do not have tooling to copy transitive CSS yet, this file is to be used by other downstream components.
+ */
+</style><style></style><link type="text/css" rel="stylesheet" href="./index-css.css"></head>
+<body class="tundra">
+<div id="applicationContainer" class="smallApplicationContainer"><div class="embeddedFigureWidget" id="dijit__TemplatedMixin_0" widgetid="dijit__TemplatedMixin_0">
+    <div id="gbt_root_node" data-dojo-attach-point="containerNode"></div>
+</div></div>
+<script src="./dojoConfig-release-global(1).js.download"></script>
+<script src="./bundle.index.js.download"></script>
+
+
+<div style="display: none; white-space: pre;"></div><span style="display: none; white-space: pre;"></span><ul><li style="display: none; white-space: pre;"></li></ul><div class="vc-htmllabel" style="display: none;"><div style="display: none;"></div></div><div class="appLogFooter logComponent"><div class="constantFooter logComponent" id="constantFooter" style="bottom: 0px;"><table class="logComponent"><tr><td class="buttonRowCell"><div class="buttonRowContentCell" id="" style="color: rgb(0, 102, 204); border-color: rgb(0, 102, 204);"><span id="" class="">Show Log</span></div></td><td class="buttonRowCell" style="visibility: hidden; display: none;"><div class="buttonRowContentCell" id="" style="color: rgb(0, 102, 204); border-color: rgb(0, 102, 204);"><span id="" class="">Refresh</span></div></td><td style="width: 100%;"></td><td class="buttonRowCell" style="visibility: hidden; display: none;"><div class="buttonRowContentCell" id="" style="border: none;"><div class="buttonRowCellImage makeLargeIcon"></div></div></td></tr></table></div><div id="logFrame" class="logComponent" style="width: 100%; height: 250px; display: none; overflow: auto; font-family: Arial; line-height: 1.5;"><div class="allLogContents" id="allLogContents" style="margin-left: 17px; overflow-wrap: break-word;"><div><span class="logTimestamp">2024-03-12 08:30:18     </span><span class="logOutContent">New session requested for "xDeepPolar"</span></div><div><span class="logTimestamp">2024-03-12 08:30:22     </span><span class="logOutContent">Session for "xDeepPolar" created successfully</span></div></div></div><div class="mw-busyIndicator" data-dojo-attach-point="_busyOverlayNode" id="MW_utils_BusyOverlay_0" widgetid="MW_utils_BusyOverlay_0" style="display: none;">
+	<div class="underlayNode" data-dojo-attach-point="_underlayNode" style="z-index: 2000000000;"></div>
+	<div class="spinnerBgPanel" tabindex="0" data-dojo-attach-point="_spinnerBgPanel">
+		<div class="spinnerNode" data-dojo-attach-point="_spinnerNode"></div>
+	<div class="spinnerText" style="display: none;"><span></span></div></div>
+</div></div></body></html>
